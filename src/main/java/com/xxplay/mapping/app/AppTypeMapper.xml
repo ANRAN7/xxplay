@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxplay.dao.app.IAppTypeDao" >
+  <resultMap id="BaseResultMap" type="com.xxplay.pojo.app.AppType" >
+    <id column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="type_class" property="typeClass" jdbcType="CHAR" />
+    <result column="type_name" property="typeName" jdbcType="VARCHAR" />
+    <result column="type_iconUrl" property="typeIconurl" jdbcType="VARCHAR" />
+    <result column="type_status" property="typeStatus" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    type_id, type_class, type_name, type_iconUrl, type_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_apptype
+    where type_id = #{typeId,jdbcType=INTEGER}
+  </select>
+  
+  <select id="getAppListCountPage" resultType="java.lang.Integer">
+  	select count(*) from t_apptype
+  </select>
+  
+  <select id="getAppListPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+  	select <include refid="Base_Column_List" />
+  	 from t_apptype
+  	 order by type_id 
+  	 limit #{begin},#{end}
+  </select>
+  
+  <select id="getAppTypes" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"/> from t_apptype
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_apptype
+    where type_id = #{typeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xxplay.pojo.app.AppType" >
+    insert into t_apptype (type_id, type_class, type_name, 
+      type_iconUrl, type_status)
+    values (#{typeId,jdbcType=INTEGER}, #{typeClass,jdbcType=CHAR}, #{typeName,jdbcType=VARCHAR}, 
+      #{typeIconurl,jdbcType=VARCHAR}, #{typeStatus,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xxplay.pojo.app.AppType" >
+    insert into t_apptype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="typeClass != null" >
+        type_class,
+      </if>
+      <if test="typeName != null" >
+        type_name,
+      </if>
+      <if test="typeIconurl != null" >
+        type_iconUrl,
+      </if>
+      <if test="typeStatus != null" >
+        type_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeClass != null" >
+        #{typeClass,jdbcType=CHAR},
+      </if>
+      <if test="typeName != null" >
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeIconurl != null" >
+        #{typeIconurl,jdbcType=VARCHAR},
+      </if>
+      <if test="typeStatus != null" >
+        #{typeStatus,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xxplay.pojo.app.AppType" >
+    update t_apptype
+    <set >
+      <if test="typeClass != null" >
+        type_class = #{typeClass,jdbcType=CHAR},
+      </if>
+      <if test="typeName != null" >
+        type_name = #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeIconurl != null" >
+        type_iconUrl = #{typeIconurl,jdbcType=VARCHAR},
+      </if>
+      <if test="typeStatus != null" >
+        type_status = #{typeStatus,jdbcType=CHAR},
+      </if>
+    </set>
+    where type_id = #{typeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xxplay.pojo.app.AppType" >
+    update t_apptype
+    set type_class = #{typeClass,jdbcType=CHAR},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      type_iconUrl = #{typeIconurl,jdbcType=VARCHAR},
+      type_status = #{typeStatus,jdbcType=CHAR}
+    where type_id = #{typeId,jdbcType=INTEGER}
+  </update>
+</mapper>

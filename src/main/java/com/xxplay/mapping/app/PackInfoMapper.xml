@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxplay.dao.app.IPackInfoDao" >
+  <resultMap id="BaseResultMap" type="com.xxplay.pojo.app.AppType" >
+    <id column="packid" property="packid" jdbcType="INTEGER" />
+    <result column="appinfo_id" property="appinfoId" jdbcType="VARCHAR" />
+    <result column="is_mainver" property="isMainver" jdbcType="CHAR" />
+    <result column="show_name" property="showName" jdbcType="VARCHAR" />
+    <result column="issue_flag" property="issueFlag" jdbcType="CHAR" />
+    <result column="gains_type" property="gainsType" jdbcType="CHAR" />
+    <result column="down_times" property="downTimes" jdbcType="INTEGER" />
+    <result column="down_timesReal" property="downTimesreal" jdbcType="INTEGER" />
+    <result column="comment_times" property="commentTimes" jdbcType="INTEGER" />
+    <result column="comment_score" property="commentScore" jdbcType="INTEGER" />
+    <result column="icon_picurl" property="iconPicurl" jdbcType="VARCHAR" />
+    <result column="pack_from" property="packFrom" jdbcType="CHAR" />
+    <result column="pack_size" property="packSize" jdbcType="INTEGER" />
+    <result column="ver_code" property="verCode" jdbcType="INTEGER" />
+    <result column="ver_name" property="verName" jdbcType="VARCHAR" />
+    <result column="sign_code" property="signCode" jdbcType="VARCHAR" />
+    <result column="pack_url" property="packUrl" jdbcType="VARCHAR" />
+    <result column="pack_md5" property="packMd5" jdbcType="VARCHAR" />
+    <result column="comp_desc" property="compDesc" jdbcType="VARCHAR" />
+    <result column="update_desc" property="updateDesc" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="pack_url2" property="packUrl2" jdbcType="VARCHAR" />
+    <result column="dpi" property="dpi" jdbcType="VARCHAR" />
+    <result column="qrCode_url" property="qrcodeUrl" jdbcType="VARCHAR" />
+    <result column="hasad" property="hasad" jdbcType="CHAR" />
+    <result column="plat_form" property="platForm" jdbcType="CHAR" />
+    <result column="part_pack_md5" property="partPackMd5" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    packid, appinfo_id, is_mainver, show_name, issue_flag, gains_type, down_times, down_timesReal, 
+    comment_times, comment_score, icon_picurl, pack_from, pack_size, ver_code, ver_name, 
+    sign_code, pack_url, pack_md5, comp_desc, update_desc, remarks, pack_url2, dpi, qrCode_url, 
+    hasad, plat_form, part_pack_md5, create_time, update_time, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_packinfo
+    where packid = #{packid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_packinfo
+    where packid = #{packid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xxplay.pojo.app.AppType" >
+    insert into t_packinfo (packid, appinfo_id, is_mainver, 
+      show_name, issue_flag, gains_type, 
+      down_times, down_timesReal, comment_times, 
+      comment_score, icon_picurl, pack_from, 
+      pack_size, ver_code, ver_name, 
+      sign_code, pack_url, pack_md5, 
+      comp_desc, update_desc, remarks, 
+      pack_url2, dpi, qrCode_url, 
+      hasad, plat_form, part_pack_md5, 
+      create_time, update_time, status
+      )
+    values (#{packid,jdbcType=VARCHAR}, #{appinfoId,jdbcType=VARCHAR}, #{isMainver,jdbcType=CHAR}, 
+      #{showName,jdbcType=VARCHAR}, #{issueFlag,jdbcType=CHAR}, #{gainsType,jdbcType=CHAR}, 
+      #{downTimes,jdbcType=INTEGER}, #{downTimesreal,jdbcType=INTEGER}, #{commentTimes,jdbcType=INTEGER}, 
+      #{commentScore,jdbcType=INTEGER}, #{iconPicurl,jdbcType=VARCHAR}, #{packFrom,jdbcType=CHAR}, 
+      #{packSize,jdbcType=INTEGER}, #{verCode,jdbcType=INTEGER}, #{verName,jdbcType=VARCHAR}, 
+      #{signCode,jdbcType=VARCHAR}, #{packUrl,jdbcType=VARCHAR}, #{packMd5,jdbcType=VARCHAR}, 
+      #{compDesc,jdbcType=VARCHAR}, #{updateDesc,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{packUrl2,jdbcType=VARCHAR}, #{dpi,jdbcType=VARCHAR}, #{qrcodeUrl,jdbcType=VARCHAR}, 
+      #{hasad,jdbcType=CHAR}, #{platForm,jdbcType=CHAR}, #{partPackMd5,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xxplay.pojo.app.AppType" >
+    insert into t_packinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="packid != null" >
+        packid,
+      </if>
+      <if test="appinfoId != null" >
+        appinfo_id,
+      </if>
+      <if test="isMainver != null" >
+        is_mainver,
+      </if>
+      <if test="showName != null" >
+        show_name,
+      </if>
+      <if test="issueFlag != null" >
+        issue_flag,
+      </if>
+      <if test="gainsType != null" >
+        gains_type,
+      </if>
+      <if test="downTimes != null" >
+        down_times,
+      </if>
+      <if test="downTimesreal != null" >
+        down_timesReal,
+      </if>
+      <if test="commentTimes != null" >
+        comment_times,
+      </if>
+      <if test="commentScore != null" >
+        comment_score,
+      </if>
+      <if test="iconPicurl != null" >
+        icon_picurl,
+      </if>
+      <if test="packFrom != null" >
+        pack_from,
+      </if>
+      <if test="packSize != null" >
+        pack_size,
+      </if>
+      <if test="verCode != null" >
+        ver_code,
+      </if>
+      <if test="verName != null" >
+        ver_name,
+      </if>
+      <if test="signCode != null" >
+        sign_code,
+      </if>
+      <if test="packUrl != null" >
+        pack_url,
+      </if>
+      <if test="packMd5 != null" >
+        pack_md5,
+      </if>
+      <if test="compDesc != null" >
+        comp_desc,
+      </if>
+      <if test="updateDesc != null" >
+        update_desc,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="packUrl2 != null" >
+        pack_url2,
+      </if>
+      <if test="dpi != null" >
+        dpi,
+      </if>
+      <if test="qrcodeUrl != null" >
+        qrCode_url,
+      </if>
+      <if test="hasad != null" >
+        hasad,
+      </if>
+      <if test="platForm != null" >
+        plat_form,
+      </if>
+      <if test="partPackMd5 != null" >
+        part_pack_md5,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="packid != null" >
+        #{packid,jdbcType=VARCHAR},
+      </if>
+      <if test="appinfoId != null" >
+        #{appinfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="isMainver != null" >
+        #{isMainver,jdbcType=CHAR},
+      </if>
+      <if test="showName != null" >
+        #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueFlag != null" >
+        #{issueFlag,jdbcType=CHAR},
+      </if>
+      <if test="gainsType != null" >
+        #{gainsType,jdbcType=CHAR},
+      </if>
+      <if test="downTimes != null" >
+        #{downTimes,jdbcType=INTEGER},
+      </if>
+      <if test="downTimesreal != null" >
+        #{downTimesreal,jdbcType=INTEGER},
+      </if>
+      <if test="commentTimes != null" >
+        #{commentTimes,jdbcType=INTEGER},
+      </if>
+      <if test="commentScore != null" >
+        #{commentScore,jdbcType=INTEGER},
+      </if>
+      <if test="iconPicurl != null" >
+        #{iconPicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="packFrom != null" >
+        #{packFrom,jdbcType=CHAR},
+      </if>
+      <if test="packSize != null" >
+        #{packSize,jdbcType=INTEGER},
+      </if>
+      <if test="verCode != null" >
+        #{verCode,jdbcType=INTEGER},
+      </if>
+      <if test="verName != null" >
+        #{verName,jdbcType=VARCHAR},
+      </if>
+      <if test="signCode != null" >
+        #{signCode,jdbcType=VARCHAR},
+      </if>
+      <if test="packUrl != null" >
+        #{packUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="packMd5 != null" >
+        #{packMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="compDesc != null" >
+        #{compDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDesc != null" >
+        #{updateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="packUrl2 != null" >
+        #{packUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="dpi != null" >
+        #{dpi,jdbcType=VARCHAR},
+      </if>
+      <if test="qrcodeUrl != null" >
+        #{qrcodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="hasad != null" >
+        #{hasad,jdbcType=CHAR},
+      </if>
+      <if test="platForm != null" >
+        #{platForm,jdbcType=CHAR},
+      </if>
+      <if test="partPackMd5 != null" >
+        #{partPackMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xxplay.pojo.app.AppType" >
+    update t_packinfo
+    <set >
+      <if test="appinfoId != null" >
+        appinfo_id = #{appinfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="isMainver != null" >
+        is_mainver = #{isMainver,jdbcType=CHAR},
+      </if>
+      <if test="showName != null" >
+        show_name = #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueFlag != null" >
+        issue_flag = #{issueFlag,jdbcType=CHAR},
+      </if>
+      <if test="gainsType != null" >
+        gains_type = #{gainsType,jdbcType=CHAR},
+      </if>
+      <if test="downTimes != null" >
+        down_times = #{downTimes,jdbcType=INTEGER},
+      </if>
+      <if test="downTimesreal != null" >
+        down_timesReal = #{downTimesreal,jdbcType=INTEGER},
+      </if>
+      <if test="commentTimes != null" >
+        comment_times = #{commentTimes,jdbcType=INTEGER},
+      </if>
+      <if test="commentScore != null" >
+        comment_score = #{commentScore,jdbcType=INTEGER},
+      </if>
+      <if test="iconPicurl != null" >
+        icon_picurl = #{iconPicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="packFrom != null" >
+        pack_from = #{packFrom,jdbcType=CHAR},
+      </if>
+      <if test="packSize != null" >
+        pack_size = #{packSize,jdbcType=INTEGER},
+      </if>
+      <if test="verCode != null" >
+        ver_code = #{verCode,jdbcType=INTEGER},
+      </if>
+      <if test="verName != null" >
+        ver_name = #{verName,jdbcType=VARCHAR},
+      </if>
+      <if test="signCode != null" >
+        sign_code = #{signCode,jdbcType=VARCHAR},
+      </if>
+      <if test="packUrl != null" >
+        pack_url = #{packUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="packMd5 != null" >
+        pack_md5 = #{packMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="compDesc != null" >
+        comp_desc = #{compDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDesc != null" >
+        update_desc = #{updateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="packUrl2 != null" >
+        pack_url2 = #{packUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="dpi != null" >
+        dpi = #{dpi,jdbcType=VARCHAR},
+      </if>
+      <if test="qrcodeUrl != null" >
+        qrCode_url = #{qrcodeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="hasad != null" >
+        hasad = #{hasad,jdbcType=CHAR},
+      </if>
+      <if test="platForm != null" >
+        plat_form = #{platForm,jdbcType=CHAR},
+      </if>
+      <if test="partPackMd5 != null" >
+        part_pack_md5 = #{partPackMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=CHAR},
+      </if>
+    </set>
+    where packid = #{packid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xxplay.pojo.app.AppType" >
+    update t_packinfo
+    set appinfo_id = #{appinfoId,jdbcType=VARCHAR},
+      is_mainver = #{isMainver,jdbcType=CHAR},
+      show_name = #{showName,jdbcType=VARCHAR},
+      issue_flag = #{issueFlag,jdbcType=CHAR},
+      gains_type = #{gainsType,jdbcType=CHAR},
+      down_times = #{downTimes,jdbcType=INTEGER},
+      down_timesReal = #{downTimesreal,jdbcType=INTEGER},
+      comment_times = #{commentTimes,jdbcType=INTEGER},
+      comment_score = #{commentScore,jdbcType=INTEGER},
+      icon_picurl = #{iconPicurl,jdbcType=VARCHAR},
+      pack_from = #{packFrom,jdbcType=CHAR},
+      pack_size = #{packSize,jdbcType=INTEGER},
+      ver_code = #{verCode,jdbcType=INTEGER},
+      ver_name = #{verName,jdbcType=VARCHAR},
+      sign_code = #{signCode,jdbcType=VARCHAR},
+      pack_url = #{packUrl,jdbcType=VARCHAR},
+      pack_md5 = #{packMd5,jdbcType=VARCHAR},
+      comp_desc = #{compDesc,jdbcType=VARCHAR},
+      update_desc = #{updateDesc,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      pack_url2 = #{packUrl2,jdbcType=VARCHAR},
+      dpi = #{dpi,jdbcType=VARCHAR},
+      qrCode_url = #{qrcodeUrl,jdbcType=VARCHAR},
+      hasad = #{hasad,jdbcType=CHAR},
+      plat_form = #{platForm,jdbcType=CHAR},
+      part_pack_md5 = #{partPackMd5,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=CHAR}
+    where packid = #{packid,jdbcType=INTEGER}
+  </update>
+</mapper>

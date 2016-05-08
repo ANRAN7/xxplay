@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxplay.dao.app.IAppInfosDao" >
+  <resultMap id="BaseResultMap" type="com.xxplay.pojo.app.AppInfos" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="app_name" property="appName" jdbcType="VARCHAR" />
+    <result column="show_name" property="showName" jdbcType="VARCHAR" />
+    <result column="pack_name" property="packName" jdbcType="VARCHAR" />
+    <result column="issue_type" property="issueType" jdbcType="CHAR" />
+    <result column="dev_id" property="devId" jdbcType="VARCHAR" />
+    <result column="dev_name" property="devName" jdbcType="VARCHAR" />
+    <result column="app_class" property="appClass" jdbcType="CHAR" />
+    <result column="app_type" property="appType" jdbcType="VARCHAR" />
+    <result column="evil_level" property="evilLevel" jdbcType="INTEGER" />
+    <result column="down_times" property="downTimes" jdbcType="INTEGER" />
+    <result column="down_timesreal" property="downTimesreal" jdbcType="INTEGER" />
+    <result column="comment_score" property="commentScore" jdbcType="INTEGER" />
+    <result column="comment_times" property="commentTimes" jdbcType="INTEGER" />
+    <result column="apptag" property="apptag" jdbcType="INTEGER" />
+    <result column="recomm_flag" property="recommFlag" jdbcType="VARCHAR" />
+    <result column="recomm_level" property="recommLevel" jdbcType="INTEGER" />
+    <result column="recomm_word" property="recommWord" jdbcType="VARCHAR" />
+    <result column="thumb_picurl" property="thumbPicurl" jdbcType="VARCHAR" />
+    <result column="main_iconpicurl" property="mainIconpicurl" jdbcType="VARCHAR" />
+    <result column="main_packid" property="mainPackid" jdbcType="VARCHAR" />
+    <result column="main_packsize" property="mainPacksize" jdbcType="INTEGER" />
+    <result column="main_vercode" property="mainVercode" jdbcType="VARCHAR" />
+    <result column="main_vername" property="mainVername" jdbcType="VARCHAR" />
+    <result column="main_signcode" property="mainSigncode" jdbcType="VARCHAR" />
+    <result column="search_keys" property="searchKeys" jdbcType="VARCHAR" />
+    <result column="appdesc" property="appdesc" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="uapp_id" property="uappId" jdbcType="VARCHAR" />
+    <result column="creat_time" property="creatTime" jdbcType="TIMESTAMP" />
+    <result column="create_admin" property="createAdmin" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_admin" property="updateAdmin" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    <result column="isOnline" property="isonline" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, app_name, show_name, pack_name, issue_type, dev_id, dev_name, app_class, app_type, 
+    evil_level, down_times, down_timesreal, comment_score, comment_times, apptag, recomm_flag, 
+    recomm_level, recomm_word, thumb_picurl, main_iconpicurl, main_packid, main_packsize, 
+    main_vercode, main_vername, main_signcode, search_keys, appdesc, remarks, uapp_id, 
+    creat_time, create_admin, update_time, update_admin, status, isOnline
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_appinfos
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_appinfos
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xxplay.pojo.app.AppInfos"  useGeneratedKeys="true" keyProperty="id">
+    insert into t_appinfos (id, app_name, show_name, 
+      pack_name, issue_type, dev_id, 
+      dev_name, app_class, app_type, 
+      evil_level, down_times, down_timesreal, 
+      comment_score, comment_times, apptag, 
+      recomm_flag, recomm_level, recomm_word, 
+      thumb_picurl, main_iconpicurl, main_packid, 
+      main_packsize, main_vercode, main_vername, 
+      main_signcode, search_keys, appdesc, 
+      remarks, uapp_id, creat_time, 
+      create_admin, update_time, update_admin, 
+      status, isOnline)
+    values (#{id,jdbcType=INTEGER}, #{appName,jdbcType=VARCHAR}, #{showName,jdbcType=VARCHAR}, 
+      #{packName,jdbcType=VARCHAR}, #{issueType,jdbcType=CHAR}, #{devId,jdbcType=VARCHAR}, 
+      #{devName,jdbcType=VARCHAR}, #{appClass,jdbcType=CHAR}, #{appType,jdbcType=VARCHAR}, 
+      #{evilLevel,jdbcType=INTEGER}, #{downTimes,jdbcType=INTEGER}, #{downTimesreal,jdbcType=INTEGER}, 
+      #{commentScore,jdbcType=INTEGER}, #{commentTimes,jdbcType=INTEGER}, #{apptag,jdbcType=INTEGER}, 
+      #{recommFlag,jdbcType=VARCHAR}, #{recommLevel,jdbcType=INTEGER}, #{recommWord,jdbcType=VARCHAR}, 
+      #{thumbPicurl,jdbcType=VARCHAR}, #{mainIconpicurl,jdbcType=VARCHAR}, #{mainPackid,jdbcType=VARCHAR}, 
+      #{mainPacksize,jdbcType=INTEGER}, #{mainVercode,jdbcType=VARCHAR}, #{mainVername,jdbcType=VARCHAR}, 
+      #{mainSigncode,jdbcType=VARCHAR}, #{searchKeys,jdbcType=VARCHAR}, #{appdesc,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR}, #{uappId,jdbcType=VARCHAR}, #{creatTime,jdbcType=TIMESTAMP}, 
+      #{createAdmin,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updateAdmin,jdbcType=VARCHAR}, 
+      #{status,jdbcType=CHAR}, #{isonline,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xxplay.pojo.app.AppInfos"  useGeneratedKeys="true" keyProperty="id">
+    insert into t_appinfos
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="appName != null" >
+        app_name,
+      </if>
+      <if test="showName != null" >
+        show_name,
+      </if>
+      <if test="packName != null" >
+        pack_name,
+      </if>
+      <if test="issueType != null" >
+        issue_type,
+      </if>
+      <if test="devId != null" >
+        dev_id,
+      </if>
+      <if test="devName != null" >
+        dev_name,
+      </if>
+      <if test="appClass != null" >
+        app_class,
+      </if>
+      <if test="appType != null" >
+        app_type,
+      </if>
+      <if test="evilLevel != null" >
+        evil_level,
+      </if>
+      <if test="downTimes != null" >
+        down_times,
+      </if>
+      <if test="downTimesreal != null" >
+        down_timesreal,
+      </if>
+      <if test="commentScore != null" >
+        comment_score,
+      </if>
+      <if test="commentTimes != null" >
+        comment_times,
+      </if>
+      <if test="apptag != null" >
+        apptag,
+      </if>
+      <if test="recommFlag != null" >
+        recomm_flag,
+      </if>
+      <if test="recommLevel != null" >
+        recomm_level,
+      </if>
+      <if test="recommWord != null" >
+        recomm_word,
+      </if>
+      <if test="thumbPicurl != null" >
+        thumb_picurl,
+      </if>
+      <if test="mainIconpicurl != null" >
+        main_iconpicurl,
+      </if>
+      <if test="mainPackid != null" >
+        main_packid,
+      </if>
+      <if test="mainPacksize != null" >
+        main_packsize,
+      </if>
+      <if test="mainVercode != null" >
+        main_vercode,
+      </if>
+      <if test="mainVername != null" >
+        main_vername,
+      </if>
+      <if test="mainSigncode != null" >
+        main_signcode,
+      </if>
+      <if test="searchKeys != null" >
+        search_keys,
+      </if>
+      <if test="appdesc != null" >
+        appdesc,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="uappId != null" >
+        uapp_id,
+      </if>
+      <if test="creatTime != null" >
+        creat_time,
+      </if>
+      <if test="createAdmin != null" >
+        create_admin,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateAdmin != null" >
+        update_admin,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isonline != null" >
+        isOnline,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="appName != null" >
+        #{appName,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="packName != null" >
+        #{packName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueType != null" >
+        #{issueType,jdbcType=CHAR},
+      </if>
+      <if test="devId != null" >
+        #{devId,jdbcType=VARCHAR},
+      </if>
+      <if test="devName != null" >
+        #{devName,jdbcType=VARCHAR},
+      </if>
+      <if test="appClass != null" >
+        #{appClass,jdbcType=CHAR},
+      </if>
+      <if test="appType != null" >
+        #{appType,jdbcType=VARCHAR},
+      </if>
+      <if test="evilLevel != null" >
+        #{evilLevel,jdbcType=INTEGER},
+      </if>
+      <if test="downTimes != null" >
+        #{downTimes,jdbcType=INTEGER},
+      </if>
+      <if test="downTimesreal != null" >
+        #{downTimesreal,jdbcType=INTEGER},
+      </if>
+      <if test="commentScore != null" >
+        #{commentScore,jdbcType=INTEGER},
+      </if>
+      <if test="commentTimes != null" >
+        #{commentTimes,jdbcType=INTEGER},
+      </if>
+      <if test="apptag != null" >
+        #{apptag,jdbcType=INTEGER},
+      </if>
+      <if test="recommFlag != null" >
+        #{recommFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="recommLevel != null" >
+        #{recommLevel,jdbcType=INTEGER},
+      </if>
+      <if test="recommWord != null" >
+        #{recommWord,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbPicurl != null" >
+        #{thumbPicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mainIconpicurl != null" >
+        #{mainIconpicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mainPackid != null" >
+        #{mainPackid,jdbcType=VARCHAR},
+      </if>
+      <if test="mainPacksize != null" >
+        #{mainPacksize,jdbcType=INTEGER},
+      </if>
+      <if test="mainVercode != null" >
+        #{mainVercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mainVername != null" >
+        #{mainVername,jdbcType=VARCHAR},
+      </if>
+      <if test="mainSigncode != null" >
+        #{mainSigncode,jdbcType=VARCHAR},
+      </if>
+      <if test="searchKeys != null" >
+        #{searchKeys,jdbcType=VARCHAR},
+      </if>
+      <if test="appdesc != null" >
+        #{appdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="uappId != null" >
+        #{uappId,jdbcType=VARCHAR},
+      </if>
+      <if test="creatTime != null" >
+        #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createAdmin != null" >
+        #{createAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateAdmin != null" >
+        #{updateAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="isonline != null" >
+        #{isonline,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xxplay.pojo.app.AppInfos" >
+    update t_appinfos
+    <set >
+      <if test="appName != null" >
+        app_name = #{appName,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        show_name = #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="packName != null" >
+        pack_name = #{packName,jdbcType=VARCHAR},
+      </if>
+      <if test="issueType != null" >
+        issue_type = #{issueType,jdbcType=CHAR},
+      </if>
+      <if test="devId != null" >
+        dev_id = #{devId,jdbcType=VARCHAR},
+      </if>
+      <if test="devName != null" >
+        dev_name = #{devName,jdbcType=VARCHAR},
+      </if>
+      <if test="appClass != null" >
+        app_class = #{appClass,jdbcType=CHAR},
+      </if>
+      <if test="appType != null" >
+        app_type = #{appType,jdbcType=VARCHAR},
+      </if>
+      <if test="evilLevel != null" >
+        evil_level = #{evilLevel,jdbcType=INTEGER},
+      </if>
+      <if test="downTimes != null" >
+        down_times = #{downTimes,jdbcType=INTEGER},
+      </if>
+      <if test="downTimesreal != null" >
+        down_timesreal = #{downTimesreal,jdbcType=INTEGER},
+      </if>
+      <if test="commentScore != null" >
+        comment_score = #{commentScore,jdbcType=INTEGER},
+      </if>
+      <if test="commentTimes != null" >
+        comment_times = #{commentTimes,jdbcType=INTEGER},
+      </if>
+      <if test="apptag != null" >
+        apptag = #{apptag,jdbcType=INTEGER},
+      </if>
+      <if test="recommFlag != null" >
+        recomm_flag = #{recommFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="recommLevel != null" >
+        recomm_level = #{recommLevel,jdbcType=INTEGER},
+      </if>
+      <if test="recommWord != null" >
+        recomm_word = #{recommWord,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbPicurl != null" >
+        thumb_picurl = #{thumbPicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mainIconpicurl != null" >
+        main_iconpicurl = #{mainIconpicurl,jdbcType=VARCHAR},
+      </if>
+      <if test="mainPackid != null" >
+        main_packid = #{mainPackid,jdbcType=VARCHAR},
+      </if>
+      <if test="mainPacksize != null" >
+        main_packsize = #{mainPacksize,jdbcType=INTEGER},
+      </if>
+      <if test="mainVercode != null" >
+        main_vercode = #{mainVercode,jdbcType=VARCHAR},
+      </if>
+      <if test="mainVername != null" >
+        main_vername = #{mainVername,jdbcType=VARCHAR},
+      </if>
+      <if test="mainSigncode != null" >
+        main_signcode = #{mainSigncode,jdbcType=VARCHAR},
+      </if>
+      <if test="searchKeys != null" >
+        search_keys = #{searchKeys,jdbcType=VARCHAR},
+      </if>
+      <if test="appdesc != null" >
+        appdesc = #{appdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="uappId != null" >
+        uapp_id = #{uappId,jdbcType=VARCHAR},
+      </if>
+      <if test="creatTime != null" >
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createAdmin != null" >
+        create_admin = #{createAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateAdmin != null" >
+        update_admin = #{updateAdmin,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="isonline != null" >
+        isOnline = #{isonline,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xxplay.pojo.app.AppInfos" >
+    update t_appinfos
+    set app_name = #{appName,jdbcType=VARCHAR},
+      show_name = #{showName,jdbcType=VARCHAR},
+      pack_name = #{packName,jdbcType=VARCHAR},
+      issue_type = #{issueType,jdbcType=CHAR},
+      dev_id = #{devId,jdbcType=VARCHAR},
+      dev_name = #{devName,jdbcType=VARCHAR},
+      app_class = #{appClass,jdbcType=CHAR},
+      app_type = #{appType,jdbcType=VARCHAR},
+      evil_level = #{evilLevel,jdbcType=INTEGER},
+      down_times = #{downTimes,jdbcType=INTEGER},
+      down_timesreal = #{downTimesreal,jdbcType=INTEGER},
+      comment_score = #{commentScore,jdbcType=INTEGER},
+      comment_times = #{commentTimes,jdbcType=INTEGER},
+      apptag = #{apptag,jdbcType=INTEGER},
+      recomm_flag = #{recommFlag,jdbcType=VARCHAR},
+      recomm_level = #{recommLevel,jdbcType=INTEGER},
+      recomm_word = #{recommWord,jdbcType=VARCHAR},
+      thumb_picurl = #{thumbPicurl,jdbcType=VARCHAR},
+      main_iconpicurl = #{mainIconpicurl,jdbcType=VARCHAR},
+      main_packid = #{mainPackid,jdbcType=VARCHAR},
+      main_packsize = #{mainPacksize,jdbcType=INTEGER},
+      main_vercode = #{mainVercode,jdbcType=VARCHAR},
+      main_vername = #{mainVername,jdbcType=VARCHAR},
+      main_signcode = #{mainSigncode,jdbcType=VARCHAR},
+      search_keys = #{searchKeys,jdbcType=VARCHAR},
+      appdesc = #{appdesc,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      uapp_id = #{uappId,jdbcType=VARCHAR},
+      creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      create_admin = #{createAdmin,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_admin = #{updateAdmin,jdbcType=VARCHAR},
+      status = #{status,jdbcType=CHAR},
+      isOnline = #{isonline,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
