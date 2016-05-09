@@ -23,11 +23,12 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.xxplay.core.base.AppConstants;
 import com.xxplay.core.base.AppContextUtils;
 import com.xxplay.core.exception.ServiceException;
+import com.xxplay.core.utils.ExcelReadHelper;
 import com.xxplay.pojo.admin.Admin;
-import com.xxplay.pojo.app.AppInfos;
 import com.xxplay.pojo.app.AppTab;
 import com.xxplay.pojo.app.AppType;
 import com.xxplay.pojo.app.PackInfo;
+import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
 import com.xxplay.service.gameCenter.IGameCategoryService;
 import com.xxplay.service.gameCenter.IGameService;
 import com.xxplay.service.gameCenter.IGameTabService;
@@ -238,10 +239,95 @@ public class GameManagerController {
 	 */
 	@RequestMapping("/uploadGameInfoAndRead")
 	@ResponseBody
-	public List<AppInfos> uploadGameInfoAndRead(HttpServletRequest request,@RequestParam("gameExcelModal") CommonsMultipartFile gameExcelModal){
+	public Map<String, List<GameInfoExcelModel>> uploadGameInfoAndRead(HttpServletRequest request,@RequestParam("gameExcelModal") CommonsMultipartFile gameExcelModal){
 		//上传模板
+		String excelPath = request.getServletContext().getRealPath(AppConstants.GAME_MODEL_TEMP_PATH);
+		String filePath = RequestFileUtils.uploadFile(gameExcelModal, excelPath);
+		//完成模板上传，开始解析工作
+		Map<String, List<GameInfoExcelModel>> resultMap = new HashMap<String, List<GameInfoExcelModel>>();
+		try {
+			List<Object> appInfos = ExcelReadHelper.excelRead(filePath,
+						new String[]{"id","gameName","showGameName","keys","tabs","category","isOnline","gameDesc","picList","apkName"} , 
+						GameInfoExcelModel.class);
+			
+			//解析完成，对数据进行分析，刷选出错误的文件，提供下载
+			resultMap = analyzeExcel(appInfos);
+			//将正确、错误的信息保存到session中
+			request.getSession().setAttribute("gameInofErrors", resultMap.get("errors"));
+			request.getSession().setAttribute("gameInofRights", resultMap.get("rights"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return resultMap;
+	}
+
+	/**
+	 * 分析excel，将正确的、错误的内容提炼出来
+	 *
+	 * @param appInfos
+	 * @return
+	 *
+	 * @author:陈明
+	 * @data : 2016年5月9日 下午10:29:07
+	 */
+	private Map<String, List<GameInfoExcelModel>> analyzeExcel(List<Object> appInfos) {
+		List<GameInfoExcelModel> rights = new ArrayList<GameInfoExcelModel>();
+		List<GameInfoExcelModel> errors = new ArrayList<GameInfoExcelModel>();
+		GameInfoExcelModel bean = null;
+		for(Object object : appInfos){
+			bean = (GameInfoExcelModel) object;
+			analyzeGameInfo(bean);
+			if(StringUtils.isNotBlank(bean.getErrorTips())){
+				errors.add(bean);
+			}else{
+				rights.add(bean);
+			}
+		}
 		
-		//解析模板
-		return null;
+		Map<String, List<GameInfoExcelModel>> result = new HashMap<String, List<GameInfoExcelModel>>();
+		result.put("rights", rights);
+		result.put("errors", errors);
+		return result;
+	}
+
+	/**
+	 * 分析游戏基本信息内容
+	 *
+	 * @param bean
+	 *
+	 * @author:陈明
+	 * @data : 2016年5月9日 下午10:38:04
+	 */
+	private void analyzeGameInfo(GameInfoExcelModel bean) {
+		StringBuilder errorTips = new StringBuilder();
+		if(StringUtils.isBlank(bean.getGameName())){
+			errorTips.append("游戏名称不能为空；");
+		}
+		if(StringUtils.isBlank(bean.getShowGameName())){
+			errorTips.append("展示给用户查看的游戏名称不能为空;");
+		}
+		if(StringUtils.isBlank(bean.getKeys())){
+			errorTips.append("关键词不能为空");
+		}
+		if(StringUtils.isBlank(bean.getTabs())){
+			errorTips.append("应用标签不能为空");
+		}
+		if(StringUtils.isBlank(bean.getCategory())){
+			errorTips.append("应用分类不能为空");
+		}
+		if(StringUtils.isBlank(bean.getIsOnline())){
+			errorTips.append("是否为网游不能为空");
+		}
+		if(StringUtils.isBlank(bean.getGameDesc())){
+			errorTips.append("游戏说明不能为空");
+		}
+		if(StringUtils.isBlank(bean.getPicList())){
+			errorTips.append("游戏图片不能为空");
+		}
+		if(StringUtils.isBlank(bean.getApkName())){
+			errorTips.append("apk文件名不能为空");
+		}
+		
+		bean.setErrorTips(errorTips.toString());
 	}
 }

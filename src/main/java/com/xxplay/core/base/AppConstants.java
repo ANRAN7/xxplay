@@ -54,4 +54,7 @@ public class AppConstants {
 	/** 游戏APK IOCN真实保存路径 */
 	public static final String GAME_APP_PACK_ICON_REAL_PATH = "game_app_pack_icon_real_path";
 	
+	/** 游戏批量上传模板保存路径 */
+	public static final String GAME_MODEL_TEMP_PATH = "game_model_temp_path";
+	
 }

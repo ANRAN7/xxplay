@@ -12,7 +12,7 @@
 					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</button>
 				<a id="logo" href="index.html" class="navbar-brand"><span
-					class="fa fa-rocket"></span><span class="logo-text">小熊助手</span><span
+					class="fa fa-rocket"></span><span class="logo-text">xxplay</span><span
 					style="display: none" class="logo-text-icon">µ</span></a>
 			</div>
 			<div class="topbar-main">
@@ -382,7 +382,7 @@
 						data-position="left" class="dropdown-toggle"><i
 							class="fa fa-cogs"></i></a>
 						<ul class="dropdown-menu dropdown-theme-setting pull-right">
-							<li>
+							<li style="display: none">
 								<h4 class="mtn">Theme Styles</h4> <select id="list-style"
 								class="form-control">
 									<option value="style1">Flat Squared style</option>
@@ -391,22 +391,22 @@
 							</select>
 							</li>
 							<li>
-								<h4 class="mtn">Menu Styles</h4> <select id="list-menu"
+								<h4 class="mtn">菜单风格</h4> <select id="list-menu"
 								class="form-control">
-									<option value="sidebar-default">Menu style 1</option>
-									<option value="sidebar-colors">Menu style 2</option>
-									<option value="sidebar-icons">Menu style 3</option>
-									<option value="sidebar-collapsed">Menu style 4</option>
+									<option value="sidebar-default">风格 1</option>
+									<option value="sidebar-colors">风格 2</option>
+									<option value="sidebar-icons">风格 3</option>
+									<option value="sidebar-collapsed">风格 4</option>
 							</select>
 							</li>
 							<li>
-								<h4 class="mtn">Header & Sidebar</h4> <select id="list-header"
+								<h4 class="mtn">菜单展示形式</h4> <select id="list-header"
 								class="form-control">
-									<option value="header-static">Static</option>
-									<option value="header-fixed">Fixed</option>
+									<option value="header-static">浮动</option>
+									<option value="header-fixed" selected="selected">固定</option>
 							</select>
 							</li>
-							<li>
+							<li style="display: none">
 								<h4 class="mtn">Theme Colors</h4>
 								<ul id="list-color" class="list-unstyled list-inline">
 									<li data-color="green-dark" data-hover="tooltip"

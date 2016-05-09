@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>小熊助手后台管理系统</title>
+<title>xxplay后台管理系统</title>
 <link href="../resources/styles/font/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="../resources/styles/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="../resources/styles/expand/baseStyle.css" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
     <div class="box">
 		<div class="login-box">
 			<div class="login-title text-center">
-                <h4>小熊助手后台管理系统</h4>
+                <h4>xxplay后台管理系统</h4>
 			</div>
 			<div class="login-content ">
 			<div class="form">

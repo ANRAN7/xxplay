@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Expires" content="-1" />
 <meta http-equiv="Cache-Control" content="no-cache" />
-<title>小熊助手后台管理系统</title>
+<title>xxplay后台管理系统</title>
 
 <link href="../resources/styles/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="../resources/styles/bootstrap/bootstrapValidator.min.css" rel="stylesheet" type="text/css" />

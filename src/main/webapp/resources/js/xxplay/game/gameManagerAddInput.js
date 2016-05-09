@@ -173,6 +173,13 @@ function setPageSize(){
 }
 
 function saveGameInfoSuccess(responseData){
-	
+	if(responseData.resultFlag == 0){
+		$("#saveResult").html("保存游戏失败...");
+	}else{
+		$("#saveResult").html("保存游戏成功");
+		$("#success a").attr("href","../gameManager/showGameDetail?id=" + responseData.appId);
+	}
+	$("#waiting").hide();
+	$("#success").show();
 }
 

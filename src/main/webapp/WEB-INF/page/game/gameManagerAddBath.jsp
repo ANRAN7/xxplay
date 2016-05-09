@@ -23,7 +23,7 @@
 									</button>
 									&nbsp;&nbsp;&nbsp;
 									<button type="submit" class="btn btn-primary start">
-										<i class="glyphicon glyphicon-upload"></i> <span>下载Excel模板</span>
+										<i class="glyphicon glyphicon-download"></i> <span>下载Excel模板</span>
 									</button>
 								</div>
 								<div class="col-md-6 fileupload-progress fade">

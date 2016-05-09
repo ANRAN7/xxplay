@@ -6,7 +6,7 @@
 <head>
 </head>
 <body>
-	<div id="tab4-wizard-custom-circle" class="tab-pane">
+	<div id="tab1-wizard-custom-circle" class="tab-pane">
 		<form id="gameInfoForm" action="#" class="form-horizontal form-seperated bv-form gameForm" method="POST">
 			<div class="row">
 				<div class="col-md-12">
