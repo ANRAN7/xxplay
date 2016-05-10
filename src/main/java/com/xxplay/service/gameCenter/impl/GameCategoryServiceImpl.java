@@ -1,5 +1,6 @@
 package com.xxplay.service.gameCenter.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -60,5 +61,16 @@ public class GameCategoryServiceImpl implements IGameCategoryService{
 	public List<AppType> getGameCategorys() {
 		return appTypeDao.getAppTypes();
 	}
+
+	@Override
+	public Map<Integer, String> getGameCategoryMaps() {
+		Map<Integer, String> results = new HashMap<Integer, String>();
+		List<AppType> types = getGameCategorys();
+		for(AppType type : types){
+			results.put(type.getTypeId(), type.getTypeName());
+		}
+		return results;
+	}
+	
 	
 }

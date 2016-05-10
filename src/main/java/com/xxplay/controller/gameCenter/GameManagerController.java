@@ -208,26 +208,6 @@ public class GameManagerController {
 	}
 	
 	/**
-	 * 获取APK上传进度
-	 *
-	 * @param request
-	 * @return
-	 *
-	 * @author:陈明
-	 * @data : 2016年5月1日 下午12:04:39
-	 */
-	@RequestMapping("/getUploadApkProgress")
-	@ResponseBody
-	public Map<String, Object> getUploadApkProgress(HttpServletRequest request){
-		Map<String,Object> result = new HashMap<>();
-		if(request.getSession().getAttribute("progress") != null){
-			double progress = (double) request.getSession().getAttribute("progress");
-			result.put("progress", progress);
-		}
-		return result;
-	}
-	
-	/**
 	 * 上传并解析游戏信息模板
 	 *
 	 * @param request
@@ -250,8 +230,10 @@ public class GameManagerController {
 						new String[]{"id","gameName","showGameName","keys","tabs","category","isOnline","gameDesc","picList","apkName"} , 
 						GameInfoExcelModel.class);
 			
+			//获取游戏分类
+			Map<Integer, String> categorys = gameCategoryService.getGameCategoryMaps();
 			//解析完成，对数据进行分析，刷选出错误的文件，提供下载
-			resultMap = analyzeExcel(appInfos);
+			resultMap = analyzeExcel(appInfos,categorys);
 			//将正确、错误的信息保存到session中
 			request.getSession().setAttribute("gameInofErrors", resultMap.get("errors"));
 			request.getSession().setAttribute("gameInofRights", resultMap.get("rights"));
@@ -270,13 +252,13 @@ public class GameManagerController {
 	 * @author:陈明
 	 * @data : 2016年5月9日 下午10:29:07
 	 */
-	private Map<String, List<GameInfoExcelModel>> analyzeExcel(List<Object> appInfos) {
+	private Map<String, List<GameInfoExcelModel>> analyzeExcel(List<Object> appInfos,Map<Integer, String> categorys) {
 		List<GameInfoExcelModel> rights = new ArrayList<GameInfoExcelModel>();
 		List<GameInfoExcelModel> errors = new ArrayList<GameInfoExcelModel>();
 		GameInfoExcelModel bean = null;
 		for(Object object : appInfos){
 			bean = (GameInfoExcelModel) object;
-			analyzeGameInfo(bean);
+			analyzeGameInfo(bean,categorys);
 			if(StringUtils.isNotBlank(bean.getErrorTips())){
 				errors.add(bean);
 			}else{
@@ -298,7 +280,7 @@ public class GameManagerController {
 	 * @author:陈明
 	 * @data : 2016年5月9日 下午10:38:04
 	 */
-	private void analyzeGameInfo(GameInfoExcelModel bean) {
+	private void analyzeGameInfo(GameInfoExcelModel bean,Map<Integer, String> category) {
 		StringBuilder errorTips = new StringBuilder();
 		if(StringUtils.isBlank(bean.getGameName())){
 			errorTips.append("游戏名称不能为空；");
@@ -314,9 +296,22 @@ public class GameManagerController {
 		}
 		if(StringUtils.isBlank(bean.getCategory())){
 			errorTips.append("应用分类不能为空");
+		}else{
+			String[] strings = bean.getCategory().split(",");
+			StringBuffer categoryTxt = new StringBuffer();
+			for(int i = 0 , j = strings.length ; i < j ; i++){
+				categoryTxt.append(category.get(Integer.valueOf(strings[i]))).append(",");
+			}
+			bean.setCategoryTxt(categoryTxt.substring(0, categoryTxt.length() - 1).toLowerCase());
 		}
 		if(StringUtils.isBlank(bean.getIsOnline())){
 			errorTips.append("是否为网游不能为空");
+		}else{
+			if("1".equals(bean.getIsOnline())){
+				bean.setIsOnlineTxt("网游");
+			}else{
+				bean.setIsOnlineTxt("单机");
+			}
 		}
 		if(StringUtils.isBlank(bean.getGameDesc())){
 			errorTips.append("游戏说明不能为空");

@@ -53,5 +53,15 @@ public interface IGameCategoryService {
 	 * @data : 2016年4月23日 下午6:54:58
 	 */
 	List<AppType> getGameCategorys();
+	
+	/**
+	 * 获取游戏分类,
+	 * 
+	 * @return 游戏分类，结果技为map，categoryId --> categoryName
+	 *
+	 * @author:陈明
+	 * @data : 2016年5月10日 下午10:14:54
+	 */
+	public Map<Integer, String> getGameCategoryMaps();
 
 }

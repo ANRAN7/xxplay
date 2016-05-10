@@ -1,6 +1,8 @@
 package com.xxplay.service.gameCenter.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -31,6 +33,16 @@ public class GameTabServiceImpl implements IGameTabService{
 	@Override
 	public List<AppTab> getGameTabs() {
 		return appTabDao.selectAppTabs();
+	}
+
+	@Override
+	public Map<Integer, String> getGameTabsMaps() {
+		Map<Integer, String> result = new HashMap<Integer, String>();
+		List<AppTab> tabs = getGameTabs();
+		for(AppTab tab : tabs){
+			result.put(tab.getId(), tab.getTabName());
+		}
+		return result;
 	}
 
 }
