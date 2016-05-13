@@ -12,6 +12,10 @@ $(function(){
         	setResultContent(errors,"error");
         }
     });
+	
+	$("#saveBathGameInfo").click(function(){
+		ajaxSend("../gameManager/saveBathGameInfo",null,saveBathGameInfoSuccess);
+	});
 });
 
 function setResultContent(contents,tab){
@@ -39,4 +43,8 @@ function setResultContent(contents,tab){
 		});
 	}
 	parent.sizeChange();
+}
+
+function saveBathGameInfoSuccess(responseData){
+	
 }

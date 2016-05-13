@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.xxplay.pojo.admin.Admin;
 import com.xxplay.pojo.app.PackInfo;
+import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
 
 /**
  * 游戏服务 接口
@@ -41,5 +42,18 @@ public interface IGameService {
 	 */
 	int addGame(Admin admin, Map<String, String> appInfoMap,
 			Map<String, String> params, List<String> picList, PackInfo packInfo);
+
+	/**
+	 * 保存批量游戏任务<br>
+	 * 主要处理逻辑如下：<br>
+	 * 1.保存一个任务，生成批次号，然后将所有的记录全部管理到改批次号下，然后批量保存即可<br>
+	 * 2.开启另一个线程，对改任务进行处理，全部进行批量保存<br>
+	 *
+	 * @param gameInfos
+	 * 
+	 * @author : chenssy
+	 * @date : 2016年5月13日 下午12:45:00
+	 */
+	void saveGameBathTask(List<GameInfoExcelModel> gameInfos);
 
 }

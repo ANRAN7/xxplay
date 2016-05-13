@@ -14,6 +14,7 @@ import com.xxplay.dao.app.IAppInfosDao;
 import com.xxplay.pojo.admin.Admin;
 import com.xxplay.pojo.app.AppInfos;
 import com.xxplay.pojo.app.PackInfo;
+import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
 import com.xxplay.service.gameCenter.IGameApkService;
 import com.xxplay.service.gameCenter.IGamePicListService;
 import com.xxplay.service.gameCenter.IGameService;
@@ -102,4 +103,9 @@ public class GameServiceImpl implements IGameService{
 		return appInfos.getId();
 	}
 
+	@Override
+	public void saveGameBathTask(List<GameInfoExcelModel> gameInfos) {
+		// TODO Auto-generated method stub
+		
+	}
 }

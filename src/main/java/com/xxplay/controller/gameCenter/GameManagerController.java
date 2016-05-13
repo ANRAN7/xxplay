@@ -242,6 +242,20 @@ public class GameManagerController {
 		}
 		return resultMap;
 	}
+	
+	/**
+	 * 批量保存游戏
+	 *
+	 * @param request
+	 * 
+	 * @author : chenssy
+	 * @date : 2016年5月13日 下午12:35:01
+	 */
+	@SuppressWarnings("unchecked")
+	public void saveBathGameInfo(HttpServletRequest request){
+		List<GameInfoExcelModel> gameInfos = (List<GameInfoExcelModel>) request.getSession().getAttribute("gameInofErrors");
+		gameService.saveGameBathTask(gameInfos);
+	}
 
 	/**
 	 * 分析excel，将正确的、错误的内容提炼出来
