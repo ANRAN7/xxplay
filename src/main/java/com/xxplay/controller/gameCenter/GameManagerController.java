@@ -227,7 +227,7 @@ public class GameManagerController {
 		Map<String, List<GameInfoExcelModel>> resultMap = new HashMap<String, List<GameInfoExcelModel>>();
 		try {
 			List<Object> appInfos = ExcelReadHelper.excelRead(filePath,
-						new String[]{"id","gameName","showGameName","keys","tabs","category","isOnline","gameDesc","picList","apkName"} , 
+						new String[]{"id","appName","showName","searchKeys","apptag","appType","isOnline","appdesc","picList","apkName","evilLevel","recommFlag","recommLevel","recommWord"} , 
 						GameInfoExcelModel.class);
 			
 			//获取游戏分类
@@ -296,22 +296,22 @@ public class GameManagerController {
 	 */
 	private void analyzeGameInfo(GameInfoExcelModel bean,Map<Integer, String> category) {
 		StringBuilder errorTips = new StringBuilder();
-		if(StringUtils.isBlank(bean.getGameName())){
+		if(StringUtils.isBlank(bean.getAppName())){
 			errorTips.append("游戏名称不能为空；");
 		}
-		if(StringUtils.isBlank(bean.getShowGameName())){
+		if(StringUtils.isBlank(bean.getShowName())){
 			errorTips.append("展示给用户查看的游戏名称不能为空;");
 		}
-		if(StringUtils.isBlank(bean.getKeys())){
+		if(StringUtils.isBlank(bean.getSearchKeys())){
 			errorTips.append("关键词不能为空");
 		}
-		if(StringUtils.isBlank(bean.getTabs())){
+		if(StringUtils.isBlank(bean.getApptag())){
 			errorTips.append("应用标签不能为空");
 		}
-		if(StringUtils.isBlank(bean.getCategory())){
+		if(StringUtils.isBlank(bean.getAppType())){
 			errorTips.append("应用分类不能为空");
 		}else{
-			String[] strings = bean.getCategory().split(",");
+			String[] strings = bean.getAppType().split(",");
 			StringBuffer categoryTxt = new StringBuffer();
 			for(int i = 0 , j = strings.length ; i < j ; i++){
 				categoryTxt.append(category.get(Integer.valueOf(strings[i]))).append(",");
@@ -327,7 +327,7 @@ public class GameManagerController {
 				bean.setIsOnlineTxt("单机");
 			}
 		}
-		if(StringUtils.isBlank(bean.getGameDesc())){
+		if(StringUtils.isBlank(bean.getAppdesc())){
 			errorTips.append("游戏说明不能为空");
 		}
 		if(StringUtils.isBlank(bean.getPicList())){

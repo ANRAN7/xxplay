@@ -31,7 +31,7 @@ public class AppInfos {
 
     private Integer commentTimes;
 
-    private Integer apptag;
+    private String apptag;
 
     private String recommFlag;
 
@@ -185,15 +185,15 @@ public class AppInfos {
         this.commentTimes = commentTimes;
     }
 
-    public Integer getApptag() {
-        return apptag;
-    }
+    public String getApptag() {
+		return apptag;
+	}
 
-    public void setApptag(Integer apptag) {
-        this.apptag = apptag;
-    }
+	public void setApptag(String apptag) {
+		this.apptag = apptag;
+	}
 
-    public String getRecommFlag() {
+	public String getRecommFlag() {
         return recommFlag;
     }
 

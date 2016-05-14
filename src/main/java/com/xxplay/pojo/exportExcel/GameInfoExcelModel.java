@@ -1,29 +1,36 @@
 package com.xxplay.pojo.exportExcel;
 
-import java.util.List;
 
 public class GameInfoExcelModel {
 	private String id;
 
-	private String gameName;
+	private String appName;
 
-	private String showGameName;
+	private String showName;
 	
-	private String keys;
+	private String searchKeys;
 	
-	private String tabs;
+	private String apptag;
 	
-	private String category;
+	private String appType;
 	
 	private String isOnline;
 	
-	private String gameDesc;
+	private String appdesc;
 	
 	private String picList;
 	
 	private String apkName;
-
-	private List<String> picListPath;
+	
+	private String evilLevel;
+	
+	private String recommFlag;
+	
+	private String recommLevel;
+	
+	private String recommWord;
+	
+	private String picListPath;
 	
 	private String categoryTxt;
 	
@@ -39,44 +46,44 @@ public class GameInfoExcelModel {
 		this.id = id;
 	}
 
-	public String getGameName() {
-		return gameName;
+	public String getAppName() {
+		return appName;
 	}
 
-	public void setGameName(String gameName) {
-		this.gameName = gameName;
+	public void setAppName(String appName) {
+		this.appName = appName;
 	}
 
-	public String getShowGameName() {
-		return showGameName;
+	public String getShowName() {
+		return showName;
 	}
 
-	public void setShowGameName(String showGameName) {
-		this.showGameName = showGameName;
+	public void setShowName(String showName) {
+		this.showName = showName;
 	}
 
-	public String getKeys() {
-		return keys;
+	public String getSearchKeys() {
+		return searchKeys;
 	}
 
-	public void setKeys(String keys) {
-		this.keys = keys;
+	public void setSearchKeys(String searchKeys) {
+		this.searchKeys = searchKeys;
 	}
 
-	public String getTabs() {
-		return tabs;
+	public String getApptag() {
+		return apptag;
 	}
 
-	public void setTabs(String tabs) {
-		this.tabs = tabs;
+	public void setApptag(String apptag) {
+		this.apptag = apptag;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getAppType() {
+		return appType;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setAppType(String appType) {
+		this.appType = appType;
 	}
 
 	public String getIsOnline() {
@@ -87,12 +94,12 @@ public class GameInfoExcelModel {
 		this.isOnline = isOnline;
 	}
 
-	public String getGameDesc() {
-		return gameDesc;
+	public String getAppdesc() {
+		return appdesc;
 	}
 
-	public void setGameDesc(String gameDesc) {
-		this.gameDesc = gameDesc;
+	public void setAppdesc(String appdesc) {
+		this.appdesc = appdesc;
 	}
 
 	public String getPicList() {
@@ -111,11 +118,43 @@ public class GameInfoExcelModel {
 		this.apkName = apkName;
 	}
 
-	public List<String> getPicListPath() {
+	public String getEvilLevel() {
+		return evilLevel;
+	}
+
+	public void setEvilLevel(String evilLevel) {
+		this.evilLevel = evilLevel;
+	}
+
+	public String getRecommFlag() {
+		return recommFlag;
+	}
+
+	public void setRecommFlag(String recommFlag) {
+		this.recommFlag = recommFlag;
+	}
+
+	public String getRecommLevel() {
+		return recommLevel;
+	}
+
+	public void setRecommLevel(String recommLevel) {
+		this.recommLevel = recommLevel;
+	}
+
+	public String getRecommWord() {
+		return recommWord;
+	}
+
+	public void setRecommWord(String recommWord) {
+		this.recommWord = recommWord;
+	}
+
+	public String getPicListPath() {
 		return picListPath;
 	}
 
-	public void setPicListPath(List<String> picListPath) {
+	public void setPicListPath(String picListPath) {
 		this.picListPath = picListPath;
 	}
 

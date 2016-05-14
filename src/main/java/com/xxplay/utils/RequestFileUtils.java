@@ -23,7 +23,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
  */
 public class RequestFileUtils {
 	/**
-	 * 上传图片<br>
+	 * 上传文件<br>
 	 *
 	 * @param request
 	 * 				request请求
@@ -32,7 +32,7 @@ public class RequestFileUtils {
 	 * @param path
 	 * 				文件保存路径
 	 * @return
-	 * 			上传成功返回图片路径，否则返回null
+	 * 			上传成功返回文件路径，否则返回null
 	 *
 	 * @author:陈明
 	 * @data : 2016年4月26日 下午11:53:22
@@ -44,6 +44,18 @@ public class RequestFileUtils {
         return uploadFile(file, path);
 	}
 	
+	/**
+	 * 上传文件 
+	 *
+	 * @param file
+	 * 				文件file
+	 * @param path
+	 * 				文件保存路径
+	 * @return
+	 *
+	 * @author:陈明
+	 * @data : 2016年5月14日 下午12:11:24
+	 */
 	public static String uploadFile(CommonsMultipartFile file,String path){
 		//文件名
         String fileName = file.getOriginalFilename();

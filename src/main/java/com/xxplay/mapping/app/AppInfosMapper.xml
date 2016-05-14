@@ -16,7 +16,7 @@
     <result column="down_timesreal" property="downTimesreal" jdbcType="INTEGER" />
     <result column="comment_score" property="commentScore" jdbcType="INTEGER" />
     <result column="comment_times" property="commentTimes" jdbcType="INTEGER" />
-    <result column="apptag" property="apptag" jdbcType="INTEGER" />
+    <result column="apptag" property="apptag" jdbcType="VARCHAR" />
     <result column="recomm_flag" property="recommFlag" jdbcType="VARCHAR" />
     <result column="recomm_level" property="recommLevel" jdbcType="INTEGER" />
     <result column="recomm_word" property="recommWord" jdbcType="VARCHAR" />
@@ -72,7 +72,7 @@
       #{packName,jdbcType=VARCHAR}, #{issueType,jdbcType=CHAR}, #{devId,jdbcType=VARCHAR}, 
       #{devName,jdbcType=VARCHAR}, #{appClass,jdbcType=CHAR}, #{appType,jdbcType=VARCHAR}, 
       #{evilLevel,jdbcType=INTEGER}, #{downTimes,jdbcType=INTEGER}, #{downTimesreal,jdbcType=INTEGER}, 
-      #{commentScore,jdbcType=INTEGER}, #{commentTimes,jdbcType=INTEGER}, #{apptag,jdbcType=INTEGER}, 
+      #{commentScore,jdbcType=INTEGER}, #{commentTimes,jdbcType=INTEGER}, #{apptag,jdbcType=VARCHAR}, 
       #{recommFlag,jdbcType=VARCHAR}, #{recommLevel,jdbcType=INTEGER}, #{recommWord,jdbcType=VARCHAR}, 
       #{thumbPicurl,jdbcType=VARCHAR}, #{mainIconpicurl,jdbcType=VARCHAR}, #{mainPackid,jdbcType=VARCHAR}, 
       #{mainPacksize,jdbcType=INTEGER}, #{mainVercode,jdbcType=VARCHAR}, #{mainVername,jdbcType=VARCHAR}, 
@@ -234,7 +234,7 @@
         #{commentTimes,jdbcType=INTEGER},
       </if>
       <if test="apptag != null" >
-        #{apptag,jdbcType=INTEGER},
+        #{apptag,jdbcType=VARCHAR},
       </if>
       <if test="recommFlag != null" >
         #{recommFlag,jdbcType=VARCHAR},
@@ -341,7 +341,7 @@
         comment_times = #{commentTimes,jdbcType=INTEGER},
       </if>
       <if test="apptag != null" >
-        apptag = #{apptag,jdbcType=INTEGER},
+        apptag = #{apptag,jdbcType=VARCHAR},
       </if>
       <if test="recommFlag != null" >
         recomm_flag = #{recommFlag,jdbcType=VARCHAR},
@@ -421,7 +421,7 @@
       down_timesreal = #{downTimesreal,jdbcType=INTEGER},
       comment_score = #{commentScore,jdbcType=INTEGER},
       comment_times = #{commentTimes,jdbcType=INTEGER},
-      apptag = #{apptag,jdbcType=INTEGER},
+      apptag = #{apptag,jdbcType=VARCHAR},
       recomm_flag = #{recommFlag,jdbcType=VARCHAR},
       recomm_level = #{recommLevel,jdbcType=INTEGER},
       recomm_word = #{recommWord,jdbcType=VARCHAR},

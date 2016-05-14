@@ -22,14 +22,14 @@ import java.util.Calendar;
 public class GenerateSequenceUtil {
 	private static final FieldPosition HELPER_POSITION = new FieldPosition(0);
 	
-	/** 时间：精确到毫秒 */
-	private final static Format dateFormat = new SimpleDateFormat("YYYYMMddHHmmssS");
+	/** 时间：精确到秒 */
+	private final static Format dateFormat = new SimpleDateFormat("YYYYMMddHHmmss");
 	
-	private final static NumberFormat numberFormat = new DecimalFormat("0000");
+	private final static NumberFormat numberFormat = new DecimalFormat("00000");
 	
 	private static int seq = 0;
 	 
-    private static final int MAX = 9999;
+    private static final int MAX = 99999;
 	
 	public static synchronized String generateSequenceNo() {
 		 
