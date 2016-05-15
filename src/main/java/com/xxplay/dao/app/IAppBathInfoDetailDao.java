@@ -1,11 +1,15 @@
 package com.xxplay.dao.app;
 
+import java.util.List;
+
 import com.xxplay.pojo.app.AppBathInfoDetail;
 
 public interface IAppBathInfoDetailDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(AppBathInfoDetail record);
+    
+    int insertBath(List<AppBathInfoDetail> item);
 
     int insertSelective(AppBathInfoDetail record);
 

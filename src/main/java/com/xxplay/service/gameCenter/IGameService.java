@@ -3,6 +3,7 @@ package com.xxplay.service.gameCenter;
 import java.util.List;
 import java.util.Map;
 
+import com.xxplay.core.exception.ServiceException;
 import com.xxplay.pojo.admin.Admin;
 import com.xxplay.pojo.app.PackInfo;
 import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
@@ -52,8 +53,9 @@ public interface IGameService {
 	 * @param gameInfos
 	 * 
 	 * @author : chenssy
+	 * @throws ServiceException 
 	 * @date : 2016年5月13日 下午12:45:00
 	 */
-	void saveGameBathTask(List<GameInfoExcelModel> gameInfos);
+	void saveGameBathTask(List<GameInfoExcelModel> gameInfos,Admin admin) throws ServiceException;
 
 }

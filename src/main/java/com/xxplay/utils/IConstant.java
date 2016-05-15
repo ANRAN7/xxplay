@@ -24,4 +24,15 @@ public class IConstant {
 	public static final String GAME_STATUS_DISABLED = "0";
 	/** 游戏状态：--已删除：2 */
 	public static final String GAME_STATUS_DELETED = "2";
+	
+	/** 保存游戏批量任务状态--未开始 */
+	public static final String GAME_SAVE_BATH_STATUS_NOTSTART = "1";
+	/** 保存游戏批量任务状态--进行中 */
+	public static final String GAME_SAVE_BATH_STATUS_TSTARTING = "2";
+	/** 保存游戏批量任务状态--成功 */
+	public static final String GAME_SAVE_BATH_STATUS_SUCCESS = "3";
+	/** 保存游戏批量任务状态--部分成功 */
+	public static final String GAME_SAVE_BATH_STATUS_PARTIALSUCCESS = "4";
+	/** 保存游戏批量任务状态--失败*/
+	public static final String GAME_SAVE_BATH_STATUS_FAILED = "4";
 }

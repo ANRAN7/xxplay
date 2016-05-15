@@ -1,21 +1,30 @@
 package com.xxplay.service.gameCenter.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.stereotype.Service;
 
+import com.xxplay.core.exception.ServiceException;
 import com.xxplay.core.utils.DateUtils;
 import com.xxplay.core.utils.StringUtils;
 import com.xxplay.dao.app.IAppInfosDao;
 import com.xxplay.pojo.admin.Admin;
+import com.xxplay.pojo.app.AppBathInfo;
+import com.xxplay.pojo.app.AppBathInfoDetail;
 import com.xxplay.pojo.app.AppInfos;
 import com.xxplay.pojo.app.PackInfo;
 import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
+import com.xxplay.service.gameCenter.IAppBathInfoDetailService;
+import com.xxplay.service.gameCenter.IAppBathInfoService;
 import com.xxplay.service.gameCenter.IGameApkService;
+import com.xxplay.service.gameCenter.IGameBathTaskService;
 import com.xxplay.service.gameCenter.IGamePicListService;
 import com.xxplay.service.gameCenter.IGameService;
 import com.xxplay.utils.IConstant;
@@ -44,6 +53,15 @@ public class GameServiceImpl implements IGameService{
 	
 	@Resource
 	private IGamePicListService gamePicListService;
+	
+	@Resource
+	private IAppBathInfoService appBathInfoService;
+	
+	@Resource
+	private IAppBathInfoDetailService appBathInfoDetailService;
+	
+	@Resource
+	private IGameBathTaskService gameBathTaskService;
 	
 	@Override
 	public int addGame(Admin admin,Map<String, String> appInfoMap,
@@ -104,8 +122,45 @@ public class GameServiceImpl implements IGameService{
 	}
 
 	@Override
-	public void saveGameBathTask(List<GameInfoExcelModel> gameInfos) {
-		// TODO Auto-generated method stub
+	public void saveGameBathTask(List<GameInfoExcelModel> gameInfos,Admin admin) throws ServiceException {
+		LOGGER.info("开始保存游戏批量信息...");
+		//保存游戏批次信息
+		AppBathInfo bathInfo = new AppBathInfo();
+		bathInfo.setCreateId(admin.getId());
+		bathInfo.setCreateName(admin.getUserName());
+		bathInfo.setCreateTime(DateUtils.getCurrentDate());
+		bathInfo.setStatus(IConstant.GAME_SAVE_BATH_STATUS_NOTSTART);	//状态：未开始
 		
+		try {
+			//保存批量信息
+			appBathInfoService.saveBathInfo(bathInfo);
+			
+			//保存详情
+			List<AppBathInfoDetail> details = new ArrayList<AppBathInfoDetail>(gameInfos.size());
+			AppBathInfoDetail detailVo = null;
+			for(GameInfoExcelModel gameInfo : gameInfos){
+				detailVo = new AppBathInfoDetail();
+				BeanUtils.copyProperties(gameInfo, detailVo);
+				detailVo.setInfoid(bathInfo.getId());
+				
+				details.add(detailVo);
+			}
+			appBathInfoDetailService.addBathInfo(details);
+			LOGGER.info("保存游戏批量任务成功，批次号：" + bathInfo.getId());
+			
+			//开启任务线程
+			LOGGER.info("开启读取游戏信息任务线程...");
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					//执行游戏批量任务
+					gameBathTaskService.excuteGameBathTask();
+				}
+			});
+			
+		} catch (BeansException e) {
+			LOGGER.error("保存批量任务失败",e);
+			throw new ServiceException("", "保存游戏批量任务失败..");
+		}
 	}
 }

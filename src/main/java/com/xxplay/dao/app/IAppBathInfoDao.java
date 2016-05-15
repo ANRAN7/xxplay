@@ -1,5 +1,8 @@
 package com.xxplay.dao.app;
 
+import java.util.List;
+import java.util.Map;
+
 import com.xxplay.pojo.app.AppBathInfo;
 
 public interface IAppBathInfoDao {
@@ -14,4 +17,6 @@ public interface IAppBathInfoDao {
     int updateByPrimaryKeySelective(AppBathInfo record);
 
     int updateByPrimaryKey(AppBathInfo record);
+    
+    List<AppBathInfo> selectByCondition(Map<String, Object> params);
 }

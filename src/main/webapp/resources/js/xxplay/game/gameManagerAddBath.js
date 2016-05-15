@@ -1,6 +1,6 @@
 $(function(){
 	$("#gameAddBathForm").fileupload({
-        url: '../gameManager/uploadGameInfoAndRead',
+        url: '../saveGameInfo/uploadGameInfoAndRead',
         acceptFileTypes:  /(\.|\/)(xlsx)$/,
         dataType: 'json',
         done:function(e,data){
@@ -14,7 +14,7 @@ $(function(){
     });
 	
 	$("#saveBathGameInfo").click(function(){
-		ajaxSend("../gameManager/saveBathGameInfo",null,saveBathGameInfoSuccess);
+		ajaxSend("../saveGameInfo/saveBathGameInfo",null,saveBathGameInfoSuccess);
 	});
 });
 
@@ -29,10 +29,10 @@ function setResultContent(contents,tab){
 			var row = $("<tr class='trContent'></tr>");
 			row.html($(rowTr).html());
 			
-			row.find("[name='appName']").html(detail.gameName);
-			row.find("[name='showAppName']").html(detail.showGameName);
-			row.find("[name='keys']").html(detail.keys);
-			row.find("[name='tabs']").html(detail.tabs);
+			row.find("[name='appName']").html(detail.appName);
+			row.find("[name='showAppName']").html(detail.showName);
+			row.find("[name='keys']").html(detail.searchKeys);
+			row.find("[name='tabs']").html(detail.apptag);
 			row.find("[name='category']").html(detail.categoryTxt);
 			row.find("[name='isOnline']").html(detail.isOnlineTxt);
 			row.find("[name='apkName']").html(detail.apkName);

@@ -15,11 +15,11 @@ public class AppBathInfoDetail {
 
     private String appType;
 
-    private String isonline;
+    private String isOnline;
 
-    private String piclist;
+    private String picList;
 
-    private String pakName;
+    private String apkName;
 
     private String appdesc;
 
@@ -87,31 +87,31 @@ public class AppBathInfoDetail {
         this.appType = appType == null ? null : appType.trim();
     }
 
-    public String getIsonline() {
-        return isonline;
+    public String getIsOnline() {
+        return isOnline;
     }
 
-    public void setIsonline(String isonline) {
-        this.isonline = isonline == null ? null : isonline.trim();
+    public void setIsOnline(String isOnline) {
+        this.isOnline = isOnline == null ? null : isOnline.trim();
     }
 
-    public String getPiclist() {
-        return piclist;
-    }
+    public String getPicList() {
+		return picList;
+	}
 
-    public void setPiclist(String piclist) {
-        this.piclist = piclist == null ? null : piclist.trim();
-    }
+	public void setPicList(String picList) {
+		this.picList = picList;
+	}
 
-    public String getPakName() {
-        return pakName;
-    }
+	public String getApkName() {
+		return apkName;
+	}
 
-    public void setPakName(String pakName) {
-        this.pakName = pakName == null ? null : pakName.trim();
-    }
+	public void setApkName(String apkName) {
+		this.apkName = apkName;
+	}
 
-    public String getAppdesc() {
+	public String getAppdesc() {
         return appdesc;
     }
 

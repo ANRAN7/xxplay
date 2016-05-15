@@ -3,12 +3,12 @@ $(function () {
 	 * 上传游戏图例列表
 	 */
 	$("#gamePicList").fileupload({
-        url: '../gameManager/uploadGamePicList',
+        url: '../saveGameInfo/uploadGamePicList',
         acceptFileTypes:  /(\.|\/)(gif|jpe?g|png)$/
     });
 	
 	$("#apkFileForm").fileupload({
-        url: '../gameManager/uploadAppPackAndRead',
+        url: '../saveGameInfo/uploadAppPackAndRead',
         acceptFileTypes:  /(\.|\/)(apk)$/,
         dataType: 'json',
         done:function(e,data){
@@ -80,7 +80,7 @@ $(function () {
 					  "categoryId":$("#categoryId").val(),
 					  "isOnlie":getRadioValue("isOnlie"),
 					  "appdesc":$("#appdesc").val()};
-		ajaxSend("../gameManager/saveGameInfoStep1",params,saveGameInfoSuccess);
+		ajaxSend("../saveGameInfo/saveGameInfoStep1",params,saveGameInfoSuccess);
     });
 	
 	$("#packInfoForm").bootstrapValidator({
@@ -129,7 +129,7 @@ $(function () {
 					  "recommFlag":$("#recommFlag").val(),
 					  "recommLevel":getRadioValue("recommLevel"),
 					  "recommWord":$("#recommWord").val()};
-		ajaxSend("../gameManager/saveGameInfoStep3",params,saveGameInfoSuccess);
+		ajaxSend("../saveGameInfo/saveGameInfoStep3",params,saveGameInfoSuccess);
 	});
 	
     $('#rootwizard-custom-circle').bootstrapWizard({
