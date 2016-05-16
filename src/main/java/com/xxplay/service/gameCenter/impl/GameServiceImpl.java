@@ -163,4 +163,11 @@ public class GameServiceImpl implements IGameService{
 			throw new ServiceException("", "保存游戏批量任务失败..");
 		}
 	}
+
+	@Override
+	public void saveGameInfo(AppInfos appInfos) {
+		appInfosDao.insert(appInfos);
+	}
+	
+	
 }

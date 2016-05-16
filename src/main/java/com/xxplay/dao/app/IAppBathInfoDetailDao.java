@@ -18,4 +18,6 @@ public interface IAppBathInfoDetailDao {
     int updateByPrimaryKeySelective(AppBathInfoDetail record);
 
     int updateByPrimaryKey(AppBathInfoDetail record);
+
+	List<AppBathInfoDetail> selectByBathId(int infoId);
 }

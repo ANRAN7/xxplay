@@ -1,7 +1,11 @@
 package com.xxplay.service.gameCenter.impl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.annotation.Resource;
 
@@ -9,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.xxplay.core.utils.DateUtils;
 import com.xxplay.pojo.app.AppBathInfo;
+import com.xxplay.pojo.app.AppBathInfoDetail;
 import com.xxplay.service.gameCenter.IAppBathInfoDetailService;
 import com.xxplay.service.gameCenter.IAppBathInfoService;
 import com.xxplay.service.gameCenter.IGameBathTaskService;
@@ -51,6 +56,12 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 		new excuteGameBathTask(bathInfo.getId());
 	}
 
+	/**
+	 * 执行批次任务的线程
+	 * 
+	 * @author chenming
+	 *
+	 */
 	private class excuteGameBathTask implements Runnable{
 		private int bathId ;
 		public excuteGameBathTask(int bathId){
@@ -58,7 +69,31 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 		}
 		@Override
 		public void run() {
+			//获取该批次任务中的所有详情任务
+			final List<AppBathInfoDetail> bathInfoDetails = appBathInfoDetailService.getDetailByBathId(bathId);
+			final CountDownLatch countDownLatch = new CountDownLatch(bathInfoDetails.size());
+			ExecutorService executorService = Executors.newFixedThreadPool(5);		//线程池大小为5
+			//迭代任务
+			for(final AppBathInfoDetail infoDetail : bathInfoDetails){
+				executorService.submit(new Runnable() {
+					@Override
+					public void run() {
+						try {
+							appBathInfoDetailService.executeAppBathInfoDetail(infoDetail);
+						} catch (Exception e) {
+						} finally{
+							countDownLatch.countDown();
+						}
+					}
+				});
+			}
 			
+			try {
+				//等待所有线程全部执行完成
+				countDownLatch.await();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
