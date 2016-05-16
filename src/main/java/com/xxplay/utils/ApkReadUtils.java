@@ -100,6 +100,7 @@ public class ApkReadUtils {
 					}
 					//icon图标
 					if ("res/drawable-hdpi/icon.png".equals(zipEntry.getName())) {
+						FileUtils.isExist(iconPath,true);		//判断该路径是否存在
 						FileOutputStream  fos = new FileOutputStream(iconPath + "/" + iconFileName);
 						InputStream inputStream = zipFile.getInputStream(zipEntry);
 						byte b[] = new byte[1024];

@@ -36,7 +36,7 @@
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="update_admin" property="updateAdmin" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="CHAR" />
-    <result column="isOnline" property="isonline" jdbcType="CHAR" />
+    <result column="isOnline" property="isOnline" jdbcType="CHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, app_name, show_name, pack_name, issue_type, dev_id, dev_name, app_class, app_type, 
@@ -79,7 +79,7 @@
       #{mainSigncode,jdbcType=VARCHAR}, #{searchKeys,jdbcType=VARCHAR}, #{appdesc,jdbcType=VARCHAR}, 
       #{remarks,jdbcType=VARCHAR}, #{uappId,jdbcType=VARCHAR}, #{creatTime,jdbcType=TIMESTAMP}, 
       #{createAdmin,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{updateAdmin,jdbcType=VARCHAR}, 
-      #{status,jdbcType=CHAR}, #{isonline,jdbcType=CHAR})
+      #{status,jdbcType=CHAR}, #{isOnline,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xxplay.pojo.app.AppInfos"  useGeneratedKeys="true" keyProperty="id">
     insert into t_appinfos
@@ -186,7 +186,7 @@
       <if test="status != null" >
         status,
       </if>
-      <if test="isonline != null" >
+      <if test="isOnline != null" >
         isOnline,
       </if>
     </trim>
@@ -293,8 +293,8 @@
       <if test="status != null" >
         #{status,jdbcType=CHAR},
       </if>
-      <if test="isonline != null" >
-        #{isonline,jdbcType=CHAR},
+      <if test="isOnline != null" >
+        #{isOnline,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -400,8 +400,8 @@
       <if test="status != null" >
         status = #{status,jdbcType=CHAR},
       </if>
-      <if test="isonline != null" >
-        isOnline = #{isonline,jdbcType=CHAR},
+      <if test="isOnline != null" >
+        isOnline = #{isOnline,jdbcType=CHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -441,7 +441,7 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_admin = #{updateAdmin,jdbcType=VARCHAR},
       status = #{status,jdbcType=CHAR},
-      isOnline = #{isonline,jdbcType=CHAR}
+      isOnline = #{isOnline,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

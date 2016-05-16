@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.xxplay.core.utils.DateUtils;
@@ -26,9 +27,9 @@ import com.xxplay.utils.IConstant;
  * @date:2016年5月14日 下午3:01:03
  * 
  */
-@Service("gameTabService")
+@Service("gameBathTaskService")
 public class GameBathTaskServiceImpl implements IGameBathTaskService{
-	
+	private final static Logger LOGGER = Logger.getLogger(GameBathTaskServiceImpl.class);
 	@Resource
 	private IAppBathInfoService appBathInfoService;
 	
@@ -48,7 +49,7 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 		appBathInfoService.updateAppBathInfo(bathInfo);
 		
 		//开启执行批次任务
-		new excuteGameBathTask(bathInfo.getId());
+		new Thread(new excuteGameBathTask(bathInfo.getId())).start();;
 	}
 
 	/**
@@ -77,7 +78,7 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 							appBathInfoDetailService.executeAppBathInfoDetail(infoDetail);
 						} catch (Exception e) {
 						} finally{
-							countDownLatch.countDown();
+							countDownLatch.countDown();		//计数-1
 						}
 					}
 				});
@@ -86,6 +87,7 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 			try {
 				//等待所有线程全部执行完成
 				countDownLatch.await();
+				LOGGER.info("所有执行解析线程任务均已完成...,开始分析解析结果....");
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

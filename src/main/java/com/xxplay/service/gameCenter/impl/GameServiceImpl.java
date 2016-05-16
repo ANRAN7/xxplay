@@ -68,7 +68,7 @@ public class GameServiceImpl implements IGameService{
 		appInfos.setShowName(appInfoMap.get("showName"));
 		appInfos.setSearchKeys(appInfoMap.get("searchKeys"));
 		appInfos.setAppType(appInfoMap.get("categoryId"));
-		appInfos.setIsonline(appInfoMap.get("isOnlie"));
+		appInfos.setIsOnline(appInfoMap.get("isOnlie"));
 		appInfos.setAppdesc(appInfoMap.get("appdesc"));
 		appInfos.setIssueType("1");	
 		appInfos.setEvilLevel(Integer.valueOf(params.get("evilLevel")));
@@ -151,7 +151,7 @@ public class GameServiceImpl implements IGameService{
 					//执行游戏批量任务
 					gameBathTaskService.excuteGameBathTask();
 				}
-			});
+			}).start();
 			
 		} catch (BeansException e) {
 			LOGGER.error("保存批量任务失败",e);

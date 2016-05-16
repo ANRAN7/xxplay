@@ -17,23 +17,24 @@
     <result column="recomm_flag" property="recommFlag" jdbcType="VARCHAR" />
     <result column="recomm_level" property="recommLevel" jdbcType="INTEGER" />
     <result column="recomm_word" property="recommWord" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="error_tips" property="errorTips" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, infoId, app_name, show_name, search_keys, apptag, app_type, isOnline, picList, 
-    apk_name, appdesc, evil_level, recomm_flag, recomm_level, recomm_word
+    apk_name, appdesc, evil_level, recomm_flag, recomm_level, recomm_word,status,error_tips
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from t_app_bath_info_detail
+    from t_app_bath_info_detail 
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectByBathId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-  	select
-  	<include refid="Base_Column_List"/>
-  	form t_app_bath_info_detail 
-  	where infoId = #{infoId}
-  	
+  	select 
+  	<include refid="Base_Column_List"/> 
+  	from t_app_bath_info_detail 
+  	where infoId = #{infoId,jdbcType=INTEGER}
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
@@ -45,13 +46,14 @@
       show_name, search_keys, apptag, 
       app_type, isOnline, picList, 
       apk_name, appdesc, evil_level, 
-      recomm_flag, recomm_level, recomm_word
+      recomm_flag, recomm_level, recomm_word,status,error_tips
       )
     values (#{id,jdbcType=INTEGER}, #{infoid,jdbcType=INTEGER}, #{appName,jdbcType=VARCHAR}, 
       #{showName,jdbcType=VARCHAR}, #{searchKeys,jdbcType=VARCHAR}, #{apptag,jdbcType=VARCHAR}, 
-      #{appType,jdbcType=VARCHAR}, #{isonline,jdbcType=CHAR}, #{piclist,jdbcType=VARCHAR}, 
+      #{appType,jdbcType=VARCHAR}, #{isOnline,jdbcType=CHAR}, #{picList,jdbcType=VARCHAR}, 
       #{apkName,jdbcType=VARCHAR}, #{appdesc,jdbcType=VARCHAR}, #{evilLevel,jdbcType=INTEGER}, 
-      #{recommFlag,jdbcType=VARCHAR}, #{recommLevel,jdbcType=INTEGER}, #{recommWord,jdbcType=VARCHAR}
+      #{recommFlag,jdbcType=VARCHAR}, #{recommLevel,jdbcType=INTEGER}, #{recommWord,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{errorTips,jdbcType=VARCHAR}
       )
   </insert>
   
@@ -60,7 +62,7 @@
       show_name, search_keys, apptag, 
       app_type, isOnline, picList, 
       apk_name, appdesc, evil_level, 
-      recomm_flag, recomm_level, recomm_word
+      recomm_flag, recomm_level, recomm_word,status,error_tips
       )
       values
       <foreach collection="list" item="item" index="index" separator="," > 
@@ -68,7 +70,8 @@
       	 #{item.showName,jdbcType=VARCHAR}, #{item.searchKeys,jdbcType=VARCHAR}, #{item.apptag,jdbcType=VARCHAR}, 
       	 #{item.appType,jdbcType=VARCHAR}, #{item.isOnline,jdbcType=CHAR}, #{item.picList,jdbcType=VARCHAR}, 
       	 #{item.apkName,jdbcType=VARCHAR}, #{item.appdesc,jdbcType=VARCHAR}, #{item.evilLevel,jdbcType=INTEGER}, 
-      	 #{item.recommFlag,jdbcType=VARCHAR}, #{item.recommLevel,jdbcType=INTEGER}, #{item.recommWord,jdbcType=VARCHAR}
+      	 #{item.recommFlag,jdbcType=VARCHAR}, #{item.recommLevel,jdbcType=INTEGER}, #{item.recommWord,jdbcType=VARCHAR}, 
+      	 #{item.status,jdbcType=VARCHAR}, #{item.errorTips,jdbcType=VARCHAR}
       )
       </foreach>
   </insert>
@@ -97,10 +100,10 @@
       <if test="appType != null" >
         app_type,
       </if>
-      <if test="isonline != null" >
+      <if test="isOnline != null" >
         isOnline,
       </if>
-      <if test="piclist != null" >
+      <if test="picList != null" >
         picList,
       </if>
       <if test="apkName != null" >
@@ -120,6 +123,12 @@
       </if>
       <if test="recommWord != null" >
         recomm_word,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="errorTips != null" >
+        error_tips,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -144,11 +153,11 @@
       <if test="appType != null" >
         #{appType,jdbcType=VARCHAR},
       </if>
-      <if test="isonline != null" >
-        #{isonline,jdbcType=CHAR},
+      <if test="isOnline != null" >
+        #{isOnline,jdbcType=CHAR},
       </if>
-      <if test="piclist != null" >
-        #{piclist,jdbcType=VARCHAR},
+      <if test="picList != null" >
+        #{picList,jdbcType=VARCHAR},
       </if>
       <if test="apkName != null" >
         #{apkName,jdbcType=VARCHAR},
@@ -167,6 +176,12 @@
       </if>
       <if test="recommWord != null" >
         #{recommWord,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="errorTips != null" >
+        #{errorTips,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -191,11 +206,11 @@
       <if test="appType != null" >
         app_type = #{appType,jdbcType=VARCHAR},
       </if>
-      <if test="isonline != null" >
-        isOnline = #{isonline,jdbcType=CHAR},
+      <if test="isOnline != null" >
+        isOnline = #{isOnline,jdbcType=CHAR},
       </if>
-      <if test="piclist != null" >
-        picList = #{piclist,jdbcType=VARCHAR},
+      <if test="picList != null" >
+        picList = #{picList,jdbcType=VARCHAR},
       </if>
       <if test="apkName != null" >
         apk_name = #{apkName,jdbcType=VARCHAR},
@@ -215,6 +230,12 @@
       <if test="recommWord != null" >
         recomm_word = #{recommWord,jdbcType=VARCHAR},
       </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="errorTips != null" >
+        error_tips = #{errorTips,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -226,14 +247,16 @@
       search_keys = #{searchKeys,jdbcType=VARCHAR},
       apptag = #{apptag,jdbcType=VARCHAR},
       app_type = #{appType,jdbcType=VARCHAR},
-      isOnline = #{isonline,jdbcType=CHAR},
-      picList = #{piclist,jdbcType=VARCHAR},
+      isOnline = #{isOnline,jdbcType=CHAR},
+      picList = #{picList,jdbcType=VARCHAR},
       apk_name = #{apkName,jdbcType=VARCHAR},
       appdesc = #{appdesc,jdbcType=VARCHAR},
       evil_level = #{evilLevel,jdbcType=INTEGER},
       recomm_flag = #{recommFlag,jdbcType=VARCHAR},
       recomm_level = #{recommLevel,jdbcType=INTEGER},
-      recomm_word = #{recommWord,jdbcType=VARCHAR}
+      recomm_word = #{recommWord,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      error_tips = #{errorTips,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

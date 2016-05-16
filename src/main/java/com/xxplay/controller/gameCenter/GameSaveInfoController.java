@@ -166,8 +166,8 @@ public class GameSaveInfoController {
 	@ResponseBody
 	public Map<String, Object> uploadAppPackAndRead(HttpServletRequest request,@RequestParam("apkFile") CommonsMultipartFile apkFile){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		//上传APK
-		String path = request.getSession().getServletContext().getRealPath(AppContextUtils.getPropertiesValue(AppConstants.GAME_APP_PACK_TEMP_PATH));
+		//上传APK---只需要保存到某个磁盘即可
+		String path = AppContextUtils.getPropertiesValue(AppConstants.GAME_APP_PACK_TEMP_PATH);
 		String filePath = RequestFileUtils.uploadFile(apkFile, path);
 		//解析APK
 		//icon 图片路径--图片路径保存到服务器路径中，在保存游戏信息时再将图片转移到oos中

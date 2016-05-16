@@ -71,7 +71,7 @@ public class AppInfos {
 
     private String status;
 
-    private String isonline;
+    private String isOnline;
 
     public Integer getId() {
         return id;
@@ -345,11 +345,11 @@ public class AppInfos {
         this.status = status == null ? null : status.trim();
     }
 
-    public String getIsonline() {
-        return isonline;
+    public String getIsOnline() {
+        return isOnline;
     }
 
-    public void setIsonline(String isonline) {
-        this.isonline = isonline == null ? null : isonline.trim();
+    public void setIsOnline(String isOnline) {
+        this.isOnline = isOnline == null ? null : isOnline.trim();
     }
 }

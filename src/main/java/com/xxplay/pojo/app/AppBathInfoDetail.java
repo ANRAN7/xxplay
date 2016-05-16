@@ -30,6 +30,10 @@ public class AppBathInfoDetail {
     private Integer recommLevel;
 
     private String recommWord;
+    
+    private String status;
+    
+    private String errorTips;
 
     public Integer getId() {
         return id;
@@ -150,4 +154,20 @@ public class AppBathInfoDetail {
     public void setRecommWord(String recommWord) {
         this.recommWord = recommWord == null ? null : recommWord.trim();
     }
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getErrorTips() {
+		return errorTips;
+	}
+
+	public void setErrorTips(String errorTips) {
+		this.errorTips = errorTips;
+	}
 }
