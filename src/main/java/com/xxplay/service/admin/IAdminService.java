@@ -15,7 +15,7 @@ import com.xxplay.pojo.admin.Admin;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 public interface IAdminService {
 	
@@ -26,7 +26,7 @@ public interface IAdminService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public Admin getAdminByUserName(String userName);
 
@@ -38,7 +38,7 @@ public interface IAdminService {
 	 *
 	 * @author:陈明
 	 * @throws ServiceException 
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public Admin adminTranLogin(String userName,String password) throws ServiceException;
 
@@ -50,7 +50,7 @@ public interface IAdminService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	public PageBean queryAdminListPage(Map<String, String> params);
 
@@ -62,7 +62,7 @@ public interface IAdminService {
 	 *
 	 * @author:陈明
 	 * @throws ServiceException 
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	public void addAdmin(Admin admin) throws ServiceException;
 
@@ -75,7 +75,7 @@ public interface IAdminService {
 	 * 				更改状态
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	public void updateAdminStatus(String id, String status);
 
@@ -87,7 +87,7 @@ public interface IAdminService {
 	 * @param id
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	public void deleteAdmin(String id);
 
@@ -98,7 +98,7 @@ public interface IAdminService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月19日
+	 * @date : 2016年4月19日
 	 */
 	public Admin getAdminById(String id);
 
@@ -108,7 +108,7 @@ public interface IAdminService {
 	 * @param admin
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月19日
+	 * @date : 2016年4月19日
 	 */
 	public void updateAdmin(Admin admin);
 }

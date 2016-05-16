@@ -15,7 +15,7 @@ import com.xxplay.pojo.app.AppBathInfo;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月14日 下午12:41:00
+ * @date:2016年5月14日 下午12:41:00
  */
 public interface IAppBathInfoService {
 
@@ -25,7 +25,7 @@ public interface IAppBathInfoService {
 	 * @param bathInfo
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月14日 下午12:50:07
+	 * @date : 2016年5月14日 下午12:50:07
 	 */
 	void saveBathInfo(AppBathInfo bathInfo);
 
@@ -35,7 +35,7 @@ public interface IAppBathInfoService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月14日 下午11:31:20
+	 * @date : 2016年5月14日 下午11:31:20
 	 */
 	List<AppBathInfo> getAppBathInfoByCondition(Map<String, Object> params);
 
@@ -45,7 +45,7 @@ public interface IAppBathInfoService {
 	 * @param bathInfo
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月15日 上午11:45:24
+	 * @date : 2016年5月15日 上午11:45:24
 	 */
 	void updateAppBathInfo(AppBathInfo bathInfo);
 

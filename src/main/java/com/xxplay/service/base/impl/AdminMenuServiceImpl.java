@@ -20,7 +20,7 @@ import com.xxplay.service.base.IAdminMenuService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月10日
+ * @date:2016年4月10日
  */
 @Service("adminMenuService")
 class AdminMenuServiceImpl implements IAdminMenuService{

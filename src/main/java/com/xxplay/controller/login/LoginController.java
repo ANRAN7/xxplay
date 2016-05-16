@@ -29,7 +29,7 @@ import com.xxplay.service.base.IMenuService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 @Controller
 @RequestMapping("/login")
@@ -48,7 +48,7 @@ public class LoginController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	@RequestMapping("/checkAdmin")
 	public @ResponseBody Map<String, Object> checkAdmin(@RequestBody Map<String, String> params){
@@ -81,7 +81,7 @@ public class LoginController {
 	 *
 	 * @author:陈明
 	 * @throws ServiceException 
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	@RequestMapping("/login")
 	public String login(String userName,String password,HttpServletRequest request) throws ServiceException{
@@ -103,7 +103,7 @@ public class LoginController {
 	 *
 	 * @author:陈明
 	 * @throws ServiceException 
-	 * @data : 2016年4月11日
+	 * @date : 2016年4月11日
 	 */
 	@RequestMapping("/toMain")
 	public String toMain(HttpServletRequest request) throws ServiceException{
@@ -124,7 +124,7 @@ public class LoginController {
 	 * @throws ServiceException
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月12日
+	 * @date : 2016年4月12日
 	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/queryMenu")

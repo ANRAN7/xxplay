@@ -22,7 +22,7 @@ import com.xxplay.service.gameCenter.IGameTabService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月24日 下午9:26:13
+ * @date:2016年4月24日 下午9:26:13
  */
 @Service("gameTabService")
 public class GameTabServiceImpl implements IGameTabService{

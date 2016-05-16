@@ -29,7 +29,7 @@ import com.xxplay.utils.IConstant;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月14日 下午3:01:03
+ * @date:2016年5月14日 下午3:01:03
  */
 @Service("gameTabService")
 public class GameBathTaskServiceImpl implements IGameBathTaskService{

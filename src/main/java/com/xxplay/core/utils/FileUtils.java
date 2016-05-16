@@ -10,14 +10,14 @@ import java.security.MessageDigest;
  * @Project:JUtils
  * @file:FileUtils.java
  * @Author:chenssy
- * @data:2014年8月7日
+ * @date:2014年8月7日
  */
 public class FileUtils {
 	
 	/**
 	 * @desc:判断指定路径是否存在，如果不存在，根据参数决定是否新建
 	 * @autor:chenssy
-	 * @data:2014年8月7日
+	 * @date:2014年8月7日
 	 *
 	 * @param filePath
 	 * 			指定的文件路径
@@ -41,7 +41,7 @@ public class FileUtils {
 	 * @throws Exception
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月30日 下午9:10:12
+	 * @date : 2016年4月30日 下午9:10:12
 	 */
 	@SuppressWarnings("resource")
 	public static int getFileSize(File file) throws Exception {

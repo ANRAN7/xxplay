@@ -24,7 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @Project:JUtils
  * @file:ExcelReadHelper.java
  * @Author:chenssy
- * @data:2014年8月3日
+ * @date:2014年8月3日
  */
 public class ExcelReadHelper {
 	
@@ -39,7 +39,7 @@ public class ExcelReadHelper {
 	 * properties:id  name  age  sex<br>
 	 * 
 	 * @autor:chenssy
-	 * @data:2014年8月9日
+	 * @date:2014年8月9日
 	 *
 	 * @param file
 	 * 				待解析的Excel文件
@@ -73,7 +73,7 @@ public class ExcelReadHelper {
 	 * properties：id  name  age  sex<br>
 	 * 
 	 * @autor:chenssy
-	 * @data:2014年8月9日
+	 * @date:2014年8月9日
 	 *
 	 * @param file
 	 * 				待解析的Excel文件的路径
@@ -96,7 +96,7 @@ public class ExcelReadHelper {
 	/**
 	 * 根据params、object解析Excel，并且构建list集合
 	 * @autor:chenssy
-	 * @data:2014年8月9日
+	 * @date:2014年8月9日
 	 *
 	 * @param book
 	 * 				WorkBook对象，他代表了待将解析的Excel文件
@@ -133,7 +133,7 @@ public class ExcelReadHelper {
 	/**
 	 * 获取row的数据，利用反射机制构建Object对象
 	 * @autor:chenssy
-	 * @data:2014年8月9日
+	 * @date:2014年8月9日
 	 *
 	 * @param row
 	 * 				row对象
@@ -167,7 +167,7 @@ public class ExcelReadHelper {
 	/**
 	 * 根据指定属性的的setter方法给object对象设置值
 	 * @autor:chenssy
-	 * @data:2014年8月10日
+	 * @date:2014年8月10日
 	 *
 	 * @param obj
 	 * 			object对象
@@ -239,7 +239,7 @@ public class ExcelReadHelper {
 	/**
 	 * 获取object对象所有属性的Setter方法，并构建map对象，结构为Map<'field','method'>
 	 * @autor:chenssy
-	 * @data:2014年8月9日
+	 * @date:2014年8月9日
 	 *
 	 * @param object
 	 * 				object对象
@@ -270,7 +270,7 @@ public class ExcelReadHelper {
 	/**
 	 * 获取object对象的所有属性，并构建map对象，对象结果为Map<'field','field'>
 	 * @autor:chenssy
-	 * @data:2014年8月10日
+	 * @date:2014年8月10日
 	 *
 	 * @param object
 	 * 				object对象	

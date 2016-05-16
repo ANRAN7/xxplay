@@ -17,7 +17,7 @@ import com.xxplay.pojo.base.MenuItem;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月10日
+ * @date:2016年4月10日
  */
 public interface IMenuService {
 
@@ -27,7 +27,7 @@ public interface IMenuService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	List<Menu> queryMenuList();
 
@@ -39,7 +39,7 @@ public interface IMenuService {
 	 *
 	 * @author:陈明
 	 * @throws ServiceException 
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	List<MenuItem> getAdminMenuItem(Admin admin) throws ServiceException;
 

@@ -15,7 +15,7 @@ import com.xxplay.pojo.admin.Admin;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 public interface IAdminDao {
     int deleteByPrimaryKey(String id);
@@ -37,7 +37,7 @@ public interface IAdminDao {
      * @return
      *
      * @author:陈明
-     * @data : 2016年4月9日
+     * @date : 2016年4月9日
      */
 	Admin queryAdminByUserName(String userName);
 
@@ -48,7 +48,7 @@ public interface IAdminDao {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	List<Admin> queryAdminListPage(PageParams pageParams);
 
@@ -59,7 +59,7 @@ public interface IAdminDao {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	int queryAdminCountPage(PageParams pageParams);
 }

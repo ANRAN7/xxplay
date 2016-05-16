@@ -21,7 +21,7 @@ import com.xxplay.service.gameCenter.IAppBathInfoService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月14日 下午12:41:44
+ * @date:2016年5月14日 下午12:41:44
  */
 @Service("appBathInfoService")
 public class AppBathInfoServiceImpl implements IAppBathInfoService{

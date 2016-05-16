@@ -20,7 +20,7 @@ import com.xxplay.service.base.IPubSysAprService;
  * @Author:����
  * @Copyright ����   2016 All Rights Reserved.
  * 
- * @data:2016��4��7��
+ * @date:2016��4��7��
  */
 @Service("pubSysAprService")
 public class PubSysAprServiceImpl implements IPubSysAprService{

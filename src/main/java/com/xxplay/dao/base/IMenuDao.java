@@ -14,7 +14,7 @@ import com.xxplay.pojo.base.Menu;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 public interface IMenuDao {
     int deleteByPrimaryKey(String id);
@@ -29,13 +29,13 @@ public interface IMenuDao {
 
     int updateByPrimaryKey(Menu record);
 
-    /**
-     * ��ȡ���еĹ��ܲ˵�
-     *
-     * @return
-     *
-     * @author:����
-     * @data : 2016��4��8��
-     */
+   /**
+    * 获取菜单列表
+    *
+    * @return
+    * 
+    * @author : chenssy
+    * @date : 2016年5月16日 下午6:21:53
+    */
 	List<Menu> queryMenuList();
 }

@@ -14,7 +14,7 @@ import org.apache.commons.fileupload.ProgressListener;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月1日 上午12:07:53
+ * @date:2016年5月1日 上午12:07:53
  */
 public class ProgressListenerImpl implements ProgressListener {
 

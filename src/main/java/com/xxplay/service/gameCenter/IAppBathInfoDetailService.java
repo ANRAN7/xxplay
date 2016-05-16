@@ -14,7 +14,7 @@ import com.xxplay.pojo.app.AppBathInfoDetail;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月14日 下午12:47:12
+ * @date:2016年5月14日 下午12:47:12
  */
 public interface IAppBathInfoDetailService {
 
@@ -24,7 +24,7 @@ public interface IAppBathInfoDetailService {
 	 * @param details
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月14日 下午1:05:53
+	 * @date : 2016年5月14日 下午1:05:53
 	 */
 	void addBathInfo(List<AppBathInfoDetail> details);
 

@@ -20,7 +20,7 @@ import com.xxplay.service.gameCenter.IGamePicListService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月3日 下午10:51:12
+ * @date:2016年5月3日 下午10:51:12
  */
 @Service("gamePicListService")
 public class GamePicListServiceImpl implements IGamePicListService{

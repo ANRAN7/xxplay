@@ -12,7 +12,7 @@ import java.util.List;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月3日 下午10:50:36
+ * @date:2016年5月3日 下午10:50:36
  */
 public interface IGamePicListService {
 
@@ -23,7 +23,7 @@ public interface IGamePicListService {
 	 * @param appId
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月4日 下午9:03:13
+	 * @date : 2016年5月4日 下午9:03:13
 	 */
 	void saveGamePickList(List<String> picList, Integer appId);
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -28,10 +27,10 @@ import com.xxplay.utils.ApkReadUtils;
  * @package_name:com.xxplay.service.gameCenter.impl
  * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
+ * @Copyright chenssy   2016 All Rights Reserved.
  * 
- * @data:2016年5月14日 下午12:47:39
+ * @date:2016年5月14日 下午12:47:39
  */
 @Service("appBathInfoDetailService")
 public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{

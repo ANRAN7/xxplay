@@ -24,7 +24,6 @@ public interface IAdminMenuDao {
      * @return
      *
      * @author:陈明
-     * @data : 2016年4月10日
      */
 	List<AdminMenu> getAdminMenus(String adminId);
 
@@ -34,7 +33,7 @@ public interface IAdminMenuDao {
 	 * @param adminId
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	void delteAdminMenu(String adminId);
 }

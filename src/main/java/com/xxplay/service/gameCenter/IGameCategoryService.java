@@ -18,7 +18,7 @@ import com.xxplay.pojo.app.AppType;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月22日 下午11:36:58
+ * @date:2016年4月22日 下午11:36:58
  */
 public interface IGameCategoryService {
 
@@ -29,7 +29,7 @@ public interface IGameCategoryService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月22日 下午11:39:37
+	 * @date : 2016年4月22日 下午11:39:37
 	 */
 	PageBean queryGameCategoryList(Map<String, String> params);
 
@@ -40,7 +40,7 @@ public interface IGameCategoryService {
 	 *
 	 * @author:陈明
 	 * @throws ServiceException 
-	 * @data : 2016年4月23日 上午12:16:38
+	 * @date : 2016年4月23日 上午12:16:38
 	 */
 	void updateGameCategory(AppType appType) throws ServiceException;
 
@@ -50,7 +50,7 @@ public interface IGameCategoryService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月23日 下午6:54:58
+	 * @date : 2016年4月23日 下午6:54:58
 	 */
 	List<AppType> getGameCategorys();
 	
@@ -60,7 +60,7 @@ public interface IGameCategoryService {
 	 * @return 游戏分类，结果技为map，categoryId --> categoryName
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月10日 下午10:14:54
+	 * @date : 2016年5月10日 下午10:14:54
 	 */
 	public Map<Integer, String> getGameCategoryMaps();
 

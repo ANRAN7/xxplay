@@ -14,7 +14,7 @@ import com.xxplay.pojo.base.AdminMenu;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月10日
+ * @date:2016年4月10日
  */
 public interface IAdminMenuService {
 
@@ -26,7 +26,7 @@ public interface IAdminMenuService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	List<AdminMenu> getAdminMenus(String adminId);
 
@@ -36,7 +36,7 @@ public interface IAdminMenuService {
 	 * @param adminId
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	void deleteAdminMenu(String adminId);
 

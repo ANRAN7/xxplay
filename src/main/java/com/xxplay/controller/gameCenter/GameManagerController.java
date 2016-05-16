@@ -24,7 +24,7 @@ import com.xxplay.service.gameCenter.IGameTabService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月19日
+ * @date:2016年4月19日
  */
 @Controller
 @RequestMapping("/gameManager")
@@ -46,7 +46,7 @@ public class GameManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月20日
+	 * @date : 2016年4月20日
 	 */
 	@RequestMapping("/gameManagerIndex")
 	public String gameManagerIndex(Model model){

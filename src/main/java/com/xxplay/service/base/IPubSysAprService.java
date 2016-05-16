@@ -14,7 +14,7 @@ import com.xxplay.pojo.base.PubSysApr;
  * @Author:����
  * @Copyright ����   2016 All Rights Reserved.
  * 
- * @data:2016��4��7��
+ * @date:2016��4��7��
  */
 public interface IPubSysAprService {
 
@@ -24,7 +24,7 @@ public interface IPubSysAprService {
 	 * @return
 	 *
 	 * @author:����
-	 * @data : 2016��4��7��
+	 * @date : 2016��4��7��
 	 */
 	List<PubSysApr> getPubSysAprs();
 

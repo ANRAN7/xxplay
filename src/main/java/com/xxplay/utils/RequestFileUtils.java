@@ -19,7 +19,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月26日 下午11:51:36
+ * @date:2016年4月26日 下午11:51:36
  */
 public class RequestFileUtils {
 	/**
@@ -35,7 +35,7 @@ public class RequestFileUtils {
 	 * 			上传成功返回文件路径，否则返回null
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月26日 下午11:53:22
+	 * @date : 2016年4月26日 下午11:53:22
 	 */
 	public static String uploadFile(HttpServletRequest request,String inputName,String path){
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;   
@@ -54,7 +54,7 @@ public class RequestFileUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月14日 下午12:11:24
+	 * @date : 2016年5月14日 下午12:11:24
 	 */
 	public static String uploadFile(CommonsMultipartFile file,String path){
 		//文件名

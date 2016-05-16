@@ -24,7 +24,6 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月1日 上午12:07:32
  */
 public class MultipartParsingResult extends CommonsMultipartResolver {
 	

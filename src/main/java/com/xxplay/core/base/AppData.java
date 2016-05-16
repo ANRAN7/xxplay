@@ -16,7 +16,7 @@ import com.xxplay.pojo.base.Menu;
  * @Author:����
  * @Copyright ����   2016 All Rights Reserved.
  * 
- * @data:2016��4��8��
+ * @date:2016��4��8��
  */
 public class AppData {
 	

@@ -19,7 +19,7 @@ import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月19日
+ * @date:2016年4月19日
  */
 public interface IGameService {
 
@@ -40,7 +40,7 @@ public interface IGameService {
 	 * @return	id
 	 * 						游戏的id
 	 * @author:陈明
-	 * @data : 2016年5月3日 下午10:33:59
+	 * @date : 2016年5月3日 下午10:33:59
 	 */
 	int addGame(Admin admin, Map<String, String> appInfoMap,
 			Map<String, String> params, List<String> picList, PackInfo packInfo);

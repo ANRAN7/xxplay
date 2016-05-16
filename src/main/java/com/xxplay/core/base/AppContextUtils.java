@@ -21,7 +21,7 @@ public class AppContextUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public static Object getBean(String beanId) {
 		return AppContextInit.getContext().getBean(beanId);
@@ -34,7 +34,7 @@ public class AppContextUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public static List<SelectModal> getSelectModals(String key){
 		List<SelectModal> selects = new ArrayList<SelectModal>();
@@ -61,7 +61,7 @@ public class AppContextUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public static String getSysAprName(String code,String value){
 		String name = "";
@@ -82,7 +82,7 @@ public class AppContextUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public static String getPropertiesValue(String key){
 		if(StringUtils.isNotBlank(key)){
@@ -98,7 +98,7 @@ public class AppContextUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	public static String getErrorValue(String errorCode){
 		if(StringUtils.isNotBlank(errorCode)){
@@ -113,7 +113,7 @@ public class AppContextUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	public static List<Menu> getMenus(){
 		return AppData.getMENUS();

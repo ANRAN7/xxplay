@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 public class ClientRequestUtils {
 	
@@ -28,7 +28,7 @@ public class ClientRequestUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public static String getIp(HttpServletRequest request){
 		String ip = request.getHeader("x-forwarded-for");
@@ -51,7 +51,7 @@ public class ClientRequestUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	public static String getMAC(String ip){
 		String str = "";

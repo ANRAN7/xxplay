@@ -39,7 +39,7 @@ import com.xxplay.utils.IConstant;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月19日
+ * @date:2016年4月19日
  */
 @Service("gameService")
 public class GameServiceImpl implements IGameService{

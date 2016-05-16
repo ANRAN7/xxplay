@@ -26,7 +26,7 @@ import com.xxplay.service.gameCenter.IGameCategoryService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月22日 下午11:37:26
+ * @date:2016年4月22日 下午11:37:26
  */
 @Service("gameCategoryService")
 public class GameCategoryServiceImpl implements IGameCategoryService{

@@ -14,7 +14,7 @@ import com.xxplay.pojo.admin.Role;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月16日
+ * @date:2016年4月16日
  */
 public interface IRoleService {
 
@@ -24,7 +24,7 @@ public interface IRoleService {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	List<Role> getRoleSelectModal();
 

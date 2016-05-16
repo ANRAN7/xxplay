@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 @Controller
 @RequestMapping("/index")

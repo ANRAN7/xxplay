@@ -10,7 +10,7 @@ package com.xxplay.pojo.base;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 public class PubError {
     private String id;

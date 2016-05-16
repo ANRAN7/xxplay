@@ -13,7 +13,7 @@ import java.util.Map;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月16日
+ * @date:2016年4月16日
  */
 @SuppressWarnings({ "serial", "rawtypes" })
 public class PageParams extends HashMap{
@@ -33,7 +33,7 @@ public class PageParams extends HashMap{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	@SuppressWarnings("unchecked")
 	public static PageParams getInstance(int pageNo){
@@ -58,7 +58,7 @@ public class PageParams extends HashMap{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	@SuppressWarnings({ "unchecked" })
 	public static PageParams getInstance(int pageNo,Map map){
@@ -88,7 +88,7 @@ public class PageParams extends HashMap{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	@SuppressWarnings({ "unchecked" })
 	public static PageParams getInstance(int pageNo,int pageSize,Map map){

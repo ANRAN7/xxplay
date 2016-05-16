@@ -25,7 +25,7 @@ import com.xxplay.service.gameCenter.IGameCategoryService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月22日
+ * @date:2016年4月22日
  */
 @Controller
 @RequestMapping("/gameCatetory")
@@ -40,7 +40,7 @@ public class GameCategoryManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月22日
+	 * @date : 2016年4月22日
 	 */
 	@RequestMapping("/gameCategoryManager")
 	public String gameCategoryManager(){
@@ -54,7 +54,7 @@ public class GameCategoryManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月22日
+	 * @date : 2016年4月22日
 	 */
 	@RequestMapping("/queryGameCategoyrList")
 	@ResponseBody
@@ -71,7 +71,7 @@ public class GameCategoryManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月23日 上午12:24:17
+	 * @date : 2016年4月23日 上午12:24:17
 	 */
 	@RequestMapping("/updateGameCategoryStatus")
 	@ResponseBody
@@ -97,7 +97,7 @@ public class GameCategoryManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月23日 上午10:06:27
+	 * @date : 2016年4月23日 上午10:06:27
 	 */
 	@RequestMapping("/addGameCategory")
 	public String addGameCategory(){

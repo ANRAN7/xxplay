@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月24日 下午9:05:16
+ * @date:2016年4月24日 下午9:05:16
  */
 @Controller
 @RequestMapping("/gameTab")
@@ -25,7 +25,7 @@ public class GameTabManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月24日 下午9:22:58
+	 * @date : 2016年4月24日 下午9:22:58
 	 */
 	@RequestMapping("/gameTabManagerIndex")
 	public String gameTabManagerIndex(){

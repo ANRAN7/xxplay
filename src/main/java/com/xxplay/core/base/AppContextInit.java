@@ -31,7 +31,7 @@ import com.xxplay.service.base.IPubSysAprService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 public class AppContextInit extends ContextLoaderListener{
 	private final static Logger logger = Logger.getLogger(AppContextInit.class);
@@ -68,7 +68,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	private Map<String, String> initErrors() {
 		IErrorService errorService = (IErrorService) AppContextUtils.getBean("errorService");
@@ -88,7 +88,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	private List<Menu> initMenu() {
 		IMenuService menuService = (IMenuService) AppContextUtils.getBean("menuService");
@@ -102,7 +102,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	private Map<String,Map<String, String>> initAppSysApr() {
 		Map<String,Map<String, String>> sysPar = new HashMap<String, Map<String,String>>();
@@ -129,7 +129,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	@SuppressWarnings("rawtypes")
 	private Properties loadProperties(String file) {

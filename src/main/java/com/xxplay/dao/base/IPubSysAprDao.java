@@ -14,7 +14,6 @@ import com.xxplay.pojo.base.PubSysApr;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
  */
 public interface IPubSysAprDao {
     int deleteByPrimaryKey(String id);
@@ -35,7 +34,7 @@ public interface IPubSysAprDao {
      * @return
      *
      * @author:����
-     * @data : 2016��4��7��
+     * @date : 2016��4��7��
      */
     List<PubSysApr> selectPubSysAprList();
 }

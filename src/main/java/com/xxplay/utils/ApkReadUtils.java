@@ -38,7 +38,7 @@ import com.xxplay.pojo.app.PackInfo;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月30日 下午1:39:18
+ * @date:2016年4月30日 下午1:39:18
  */
 public class ApkReadUtils {
 	private static final Logger LOGGER = Logger.getLogger(ApkReadUtils.class);
@@ -56,7 +56,7 @@ public class ApkReadUtils {
 	 *
 	 * @author:陈明
 	 * @throws Exception 
-	 * @data : 2016年4月30日 下午9:06:44
+	 * @date : 2016年4月30日 下午9:06:44
 	 */
 	public static PackInfo readApk(String apkPath,String iconPath) throws Exception{
 		LOGGER.info("开始解析APK文件：：：apkPath:" + apkPath);
@@ -157,7 +157,7 @@ public class ApkReadUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月30日 下午9:44:36
+	 * @date : 2016年4月30日 下午9:44:36
 	 */
 	private static String getAttributeValue(AXmlResourceParser parser, int index) {
 		int type = parser.getAttributeValueType(index);
@@ -202,7 +202,7 @@ public class ApkReadUtils {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月30日 下午9:46:00
+	 * @date : 2016年4月30日 下午9:46:00
 	 */
 	private static String getPackage(int id) {
 		if (id >>> 24 == 1) {

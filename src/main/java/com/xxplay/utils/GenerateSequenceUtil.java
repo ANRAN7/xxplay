@@ -17,7 +17,7 @@ import java.util.Calendar;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月17日
+ * @date:2016年4月17日
  */
 public class GenerateSequenceUtil {
 	private static final FieldPosition HELPER_POSITION = new FieldPosition(0);

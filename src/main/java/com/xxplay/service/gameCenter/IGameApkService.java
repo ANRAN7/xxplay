@@ -12,7 +12,7 @@ import com.xxplay.pojo.app.PackInfo;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月3日 下午10:39:17
+ * @date:2016年5月3日 下午10:39:17
  */
 public interface IGameApkService {
 
@@ -22,7 +22,7 @@ public interface IGameApkService {
 	 * @param packInfo
 	 *
 	 * @author:陈明
-	 * @data : 2016年5月3日 下午11:17:57
+	 * @date : 2016年5月3日 下午11:17:57
 	 */
 	void addGameApkInfo(PackInfo packInfo);
 

@@ -20,7 +20,7 @@ import com.xxplay.utils.IConstant;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年5月3日 下午10:49:46
+ * @date:2016年5月3日 下午10:49:46
  */
 @Service("gameApkService")
 public class GameApkServicemImpl implements IGameApkService{

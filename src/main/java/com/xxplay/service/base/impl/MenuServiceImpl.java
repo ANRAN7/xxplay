@@ -31,7 +31,7 @@ import com.xxplay.service.base.IMenuService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月10日
+ * @date:2016年4月10日
  */
 @Service("menuService")
 public class MenuServiceImpl implements IMenuService{
@@ -80,7 +80,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	private List<MenuItem> buildMenuItem(List<Menu> menus) {
 		//获取一级菜单
@@ -114,7 +114,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	private List<MenuItem> buildChildItems(MenuItem item, List<Menu> menus) {
 		List<MenuItem> items = new ArrayList<MenuItem>();
@@ -149,7 +149,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @param childItem
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月10日
+	 * @date : 2016年4月10日
 	 */
 	@SuppressWarnings("unchecked")
 	private void sortItem(List<MenuItem> items) {
@@ -168,7 +168,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @Author:陈明
 	 * @Copyright 陈明   2016 All Rights Reserved.
 	 * 
-	 * @data:2016年4月10日
+	 * @date:2016年4月10日
 	 */
 	@SuppressWarnings("rawtypes")
 	private class ComparatorItem implements Comparator{

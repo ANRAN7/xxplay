@@ -31,7 +31,7 @@ import com.xxplay.utils.IConstant;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月9日
+ * @date:2016年4月9日
  */
 @Service("adminService")
 public class AdminService implements IAdminService{
@@ -69,7 +69,7 @@ public class AdminService implements IAdminService{
 	 * 						用户登录密码
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月9日
+	 * @date : 2016年4月9日
 	 */
 	private void checkAdminPassword(String inputPassword, String adminPassword) {
 		

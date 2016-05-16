@@ -29,7 +29,7 @@ import com.xxplay.service.admin.IRoleService;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月13日
+ * @date:2016年4月13日
  */
 @Controller
 @RequestMapping("/admin")
@@ -47,7 +47,7 @@ public class AdminManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月13日
+	 * @date : 2016年4月13日
 	 */
 	@RequestMapping("/adminIndex")
 	public String adminIndex(){
@@ -61,7 +61,7 @@ public class AdminManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月16日
+	 * @date : 2016年4月16日
 	 */
 	@RequestMapping("/queryAdminList")
 	public @ResponseBody PageBean queryAdminList(@RequestBody Map<String, String> params){
@@ -75,7 +75,7 @@ public class AdminManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	@RequestMapping("/addManagerInit")
 	public String addManagerInit(Model model){
@@ -124,7 +124,7 @@ public class AdminManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	@RequestMapping("/updateAdminStatus")
 	public @ResponseBody Map<String, Object> updateAdminStatus(@RequestBody Map<String, String> params){
@@ -147,7 +147,7 @@ public class AdminManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月17日
+	 * @date : 2016年4月17日
 	 */
 	@RequestMapping("/deleteAdmin")
 	public @ResponseBody Map<String, Object> deleteAdmin(@RequestBody Map<String, String> params){
@@ -181,7 +181,7 @@ public class AdminManagerController {
 	 * @return
 	 *
 	 * @author:陈明
-	 * @data : 2016年4月19日
+	 * @date : 2016年4月19日
 	 */
 	@RequestMapping("/updateManager")
 	public @ResponseBody Map<String, Object> updateManager(@RequestBody Admin admin){

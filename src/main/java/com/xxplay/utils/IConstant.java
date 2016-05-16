@@ -10,7 +10,7 @@ package com.xxplay.utils;
  * @Author:陈明
  * @Copyright 陈明   2016 All Rights Reserved.
  * 
- * @data:2016年4月17日
+ * @date:2016年4月17日
  */
 public class IConstant {
 	/** 用户状态：启用 */

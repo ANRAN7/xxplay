@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @Author:����
  * @Copyright ����   2016 All Rights Reserved.
  * 
- * @data:2016��4��8��
+ * @date:2016��4��8��
  */
 @SuppressWarnings("serial")
 public class SelectModal implements Serializable{
