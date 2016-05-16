@@ -7,10 +7,10 @@ import java.security.MessageDigest;
 
 /**
  * @desc:文件工具类
- * @Project:JUtils
- * @file:FileUtils.java
+ * 
  * @Author:chenssy
  * @date:2014年8月7日
+ * 
  */
 public class FileUtils {
 	
@@ -40,7 +40,7 @@ public class FileUtils {
 	 * @return
 	 * @throws Exception
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月30日 下午9:10:12
 	 */
 	@SuppressWarnings("resource")

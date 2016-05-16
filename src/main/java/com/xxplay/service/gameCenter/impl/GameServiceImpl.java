@@ -32,14 +32,9 @@ import com.xxplay.utils.IConstant;
 /**
  * 游戏服务 实现类
  * 
- * @file:GameServiceImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月19日
+ * 
  */
 @Service("gameService")
 public class GameServiceImpl implements IGameService{

@@ -22,14 +22,9 @@ import com.xxplay.utils.IConstant;
 /**
  * 游戏批量任务服务 实现类
  * 
- * @file:GameBathTaskServiceImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年5月14日 下午3:01:03
+ * 
  */
 @Service("gameTabService")
 public class GameBathTaskServiceImpl implements IGameBathTaskService{

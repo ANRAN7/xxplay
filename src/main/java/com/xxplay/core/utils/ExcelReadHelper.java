@@ -21,8 +21,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  * 解析Excel，支持2003、2007
- * @Project:JUtils
- * @file:ExcelReadHelper.java
+ * 
  * @Author:chenssy
  * @date:2014年8月3日
  */

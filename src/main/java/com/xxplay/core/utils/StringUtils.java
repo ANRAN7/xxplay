@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 /**
  * 
  * 字符串工具类，对字符串进行常规的处理
- * @Project:JUtils
- * @file:StringUtil.java
+ * 
  * @Author:chenssy
  * @date:2014年8月5日
+ * 
  */
 public class StringUtils {
 	

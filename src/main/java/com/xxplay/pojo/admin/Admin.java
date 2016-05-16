@@ -9,15 +9,9 @@ import com.xxplay.core.utils.DateUtils;
 
 /**
  * 管理员
- * 
- * @file:Admin.java
- * @package_name:com.xxplay.pojo.admin
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
+ * 
  */
 public class Admin {
     private String id;

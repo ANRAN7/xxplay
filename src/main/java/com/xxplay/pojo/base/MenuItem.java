@@ -6,14 +6,9 @@ import java.util.List;
 /**
  * 菜单集合
  * 
- * @file:MenuItem.java
- * @package_name:com.xxplay.pojo.base
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月10日
+ * 
  */
 public class MenuItem {
     private String id;
@@ -41,7 +36,7 @@ public class MenuItem {
      *
      * @param menuItem
      *
-     * @author:陈明
+     * @author:chenssy
      * @date : 2016年4月10日
      */
     public void addMenu(MenuItem menuItem){

@@ -6,18 +6,6 @@ import java.util.Properties;
 
 import com.xxplay.pojo.base.Menu;
 
-/**
- * ϵͳ��ʼ���������������
- * 
- * @file:AppData.java
- * @package_name:com.xxplay.core.base
- * @Project:xxplay
- *
- * @Author:����
- * @Copyright ����   2016 All Rights Reserved.
- * 
- * @date:2016��4��8��
- */
 public class AppData {
 	
 	/** properties配置文件 */

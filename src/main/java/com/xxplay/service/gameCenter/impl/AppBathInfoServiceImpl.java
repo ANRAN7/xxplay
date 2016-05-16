@@ -14,14 +14,9 @@ import com.xxplay.service.gameCenter.IAppBathInfoService;
 /**
  * 增加游戏批量任务服务 实现接口
  * 
- * @file:AppBathInfoServiceImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年5月14日 下午12:41:44
+ * 
  */
 @Service("appBathInfoService")
 public class AppBathInfoServiceImpl implements IAppBathInfoService{

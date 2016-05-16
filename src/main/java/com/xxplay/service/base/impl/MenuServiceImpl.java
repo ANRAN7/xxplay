@@ -24,14 +24,9 @@ import com.xxplay.service.base.IMenuService;
 /**
  * 系统菜单服务类 实现类
  * 
- * @file:MenuServiceImpl.java
- * @package_name:com.xxplay.service.base.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月10日
+ * 
  */
 @Service("menuService")
 public class MenuServiceImpl implements IMenuService{
@@ -79,7 +74,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @param menus
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月10日
 	 */
 	private List<MenuItem> buildMenuItem(List<Menu> menus) {
@@ -113,7 +108,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @param menus
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月10日
 	 */
 	private List<MenuItem> buildChildItems(MenuItem item, List<Menu> menus) {
@@ -148,7 +143,7 @@ public class MenuServiceImpl implements IMenuService{
 	 *
 	 * @param childItem
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月10日
 	 */
 	@SuppressWarnings("unchecked")
@@ -165,8 +160,8 @@ public class MenuServiceImpl implements IMenuService{
 	 * @package_name:com.xxplay.service.base.impl
 	 * @Project:xxplay
 	 *
-	 * @Author:陈明
-	 * @Copyright 陈明   2016 All Rights Reserved.
+	 * @Author:chenssy
+	 * @Copyright chenssy   2016 All Rights Reserved.
 	 * 
 	 * @date:2016年4月10日
 	 */

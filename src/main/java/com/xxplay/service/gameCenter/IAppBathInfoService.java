@@ -7,15 +7,10 @@ import com.xxplay.pojo.app.AppBathInfo;
 
 /**
  * 游戏批量任务服务 接口
- * 
- * @file:AppBathInfoService.java
- * @package_name:com.xxplay.service.gameCenter
- * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年5月14日 下午12:41:00
+ * 
  */
 public interface IAppBathInfoService {
 
@@ -24,7 +19,7 @@ public interface IAppBathInfoService {
 	 *
 	 * @param bathInfo
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月14日 下午12:50:07
 	 */
 	void saveBathInfo(AppBathInfo bathInfo);
@@ -34,7 +29,7 @@ public interface IAppBathInfoService {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月14日 下午11:31:20
 	 */
 	List<AppBathInfo> getAppBathInfoByCondition(Map<String, Object> params);
@@ -44,7 +39,7 @@ public interface IAppBathInfoService {
 	 *
 	 * @param bathInfo
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月15日 上午11:45:24
 	 */
 	void updateAppBathInfo(AppBathInfo bathInfo);

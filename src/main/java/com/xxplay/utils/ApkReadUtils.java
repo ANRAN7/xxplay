@@ -31,14 +31,10 @@ import com.xxplay.pojo.app.PackInfo;
  * versionName：版本名<br>
  * package：包名<br>
  * IOCN图标：主要是获取res/drawable-ldpi/icon.png路径下的icon.png图片
- * @file:ApkReadUtils.java
- * @package_name:com.xxplay.utils
- * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月30日 下午1:39:18
+ * 
  */
 public class ApkReadUtils {
 	private static final Logger LOGGER = Logger.getLogger(ApkReadUtils.class);
@@ -54,7 +50,7 @@ public class ApkReadUtils {
 	 * @param iconPath	icon的存放路径
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @throws Exception 
 	 * @date : 2016年4月30日 下午9:06:44
 	 */
@@ -156,7 +152,7 @@ public class ApkReadUtils {
 	 * @param index
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月30日 下午9:44:36
 	 */
 	private static String getAttributeValue(AXmlResourceParser parser, int index) {
@@ -201,7 +197,7 @@ public class ApkReadUtils {
 	 * @param id
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月30日 下午9:46:00
 	 */
 	private static String getPackage(int id) {

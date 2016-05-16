@@ -17,12 +17,8 @@ import com.xxplay.service.gameCenter.IGameTabService;
 /**
  * 游戏管理控制层
  * 
- * @file:GameManagerController.java
- * @package_name:com.xxplay.controller
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
+ * @Copyright chenssy   2016 All Rights Reserved.
  * 
  * @date:2016年4月19日
  */
@@ -45,7 +41,7 @@ public class GameManagerController {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月20日
 	 */
 	@RequestMapping("/gameManagerIndex")

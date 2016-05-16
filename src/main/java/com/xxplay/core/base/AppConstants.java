@@ -1,14 +1,10 @@
 package com.xxplay.core.base;
 
 /**
- * 
- * 
- * @file:AppConstants.java
- * @package_name:com.xxplay.core.base
- * @Project:xxplay
+ * 应用级别常量类
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
+ * @Copyright chenssy   2016 All Rights Reserved.
  * 
  * @date:2016年4月9日
  */

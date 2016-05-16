@@ -6,12 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * 游戏表标签管理controller
  * 
- * @file:GameTabManagerController.java
- * @package_name:com.xxplay.controller.gameCenter
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
+ * @Copyright chenssy   2016 All Rights Reserved.
  * 
  * @date:2016年4月24日 下午9:05:16
  */
@@ -24,7 +20,7 @@ public class GameTabManagerController {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月24日 下午9:22:58
 	 */
 	@RequestMapping("/gameTabManagerIndex")

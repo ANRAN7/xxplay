@@ -12,15 +12,10 @@ import com.xxplay.utils.IConstant;
 
 /**
  * 游戏apk服务类 实现类
- * 
- * @file:GameApkServicemImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年5月3日 下午10:49:46
+ * 
  */
 @Service("gameApkService")
 public class GameApkServicemImpl implements IGameApkService{

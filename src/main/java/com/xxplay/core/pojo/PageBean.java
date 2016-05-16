@@ -5,14 +5,9 @@ import java.util.List;
 /**
  * 分页工具类
  * 
- * @file:PageBeanUtils.java
- * @package_name:com.xxplay.core.utils
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月16日
+ * 
  */
 public class PageBean {
 	/** 当前页码，默认值1 */

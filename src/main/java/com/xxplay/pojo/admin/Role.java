@@ -3,14 +3,9 @@ package com.xxplay.pojo.admin;
 /**
  * 管理员角色
  * 
- * @file:Role.java
- * @package_name:com.xxplay.pojo.admin
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
+ * 
  */
 public class Role {
     private String id;

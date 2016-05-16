@@ -10,14 +10,9 @@ import com.xxplay.pojo.base.MenuItem;
 /**
  * 系统菜单服务类 接口
  * 
- * @file:IMenuService.java
- * @package_name:com.xxplay.service.base
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月10日
+ * 
  */
 public interface IMenuService {
 
@@ -26,7 +21,7 @@ public interface IMenuService {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月10日
 	 */
 	List<Menu> queryMenuList();
@@ -37,7 +32,7 @@ public interface IMenuService {
 	 * @param admin
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @throws ServiceException 
 	 * @date : 2016年4月10日
 	 */

@@ -9,13 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 获取客户端的Request的信息
  * 
- * @file:ClientRequestUtils.java
- * @package_name:com.xxplay.utils
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
  */
 public class ClientRequestUtils {
@@ -27,7 +21,7 @@ public class ClientRequestUtils {
 	 * 					request
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public static String getIp(HttpServletRequest request){
@@ -50,7 +44,7 @@ public class ClientRequestUtils {
 	 * @param ip
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public static String getMAC(String ip){

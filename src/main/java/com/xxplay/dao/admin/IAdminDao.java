@@ -8,14 +8,9 @@ import com.xxplay.pojo.admin.Admin;
 /**
  * 管理员DAO层
  * 
- * @file:IAdminDao.java
- * @package_name:com.xxplay.dao.admin
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
+ * 
  */
 public interface IAdminDao {
     int deleteByPrimaryKey(String id);
@@ -36,7 +31,7 @@ public interface IAdminDao {
      * @param userName
      * @return
      *
-     * @author:陈明
+     * @author:chenssy
      * @date : 2016年4月9日
      */
 	Admin queryAdminByUserName(String userName);
@@ -47,7 +42,7 @@ public interface IAdminDao {
 	 * @param pageParams
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	List<Admin> queryAdminListPage(PageParams pageParams);
@@ -58,7 +53,7 @@ public interface IAdminDao {
 	 * @param pageParams
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	int queryAdminCountPage(PageParams pageParams);

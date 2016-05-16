@@ -38,12 +38,8 @@ import com.xxplay.utils.RequestFileUtils;
 /**
  * 保存游戏Controller
  * 
- * @file:GameSaveInfoController.java
- * @package_name:com.xxplay.controller.gameCenter
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
+ * @Copyright chenssy   2016 All Rights Reserved.
  * 
  * @date:2016年5月14日 下午12:28:56
  */
@@ -66,7 +62,7 @@ public class GameSaveInfoController {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月23日 下午7:05:04
 	 */
 	@RequestMapping("/addGame")
@@ -88,7 +84,7 @@ public class GameSaveInfoController {
 	 * 				
 	 * @param request
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月24日 下午11:43:42
 	 */
 	@RequestMapping("/saveGameInfoStep1")
@@ -131,7 +127,7 @@ public class GameSaveInfoController {
 	 * @param request
 	 * @throws ServiceException
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月27日 上午12:02:02
 	 */
 	@SuppressWarnings("unchecked")
@@ -163,7 +159,7 @@ public class GameSaveInfoController {
 	 *
 	 * @param request
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月30日 上午11:21:17
 	 */
 	@RequestMapping(value = "/uploadAppPackAndRead", method = RequestMethod.POST)
@@ -197,7 +193,7 @@ public class GameSaveInfoController {
 	 * @param gameExcelModal
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月2日 下午1:17:54
 	 */
 	@RequestMapping("/uploadGameInfoAndRead")
@@ -255,7 +251,7 @@ public class GameSaveInfoController {
 	 * @param appInfos
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月9日 下午10:29:07
 	 */
 	private Map<String, List<GameInfoExcelModel>> analyzeExcel(List<Object> appInfos,Map<Integer, String> categorys) {
@@ -283,7 +279,7 @@ public class GameSaveInfoController {
 	 *
 	 * @param bean
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月9日 下午10:38:04
 	 */
 	private void analyzeGameInfo(GameInfoExcelModel bean,Map<Integer, String> category) {

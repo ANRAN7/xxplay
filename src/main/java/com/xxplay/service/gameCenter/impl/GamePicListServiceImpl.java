@@ -13,14 +13,9 @@ import com.xxplay.service.gameCenter.IGamePicListService;
 /**
  * 游戏图片列表服务 实现类
  * 
- * @file:GamePicListServiceImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年5月3日 下午10:51:12
+ * 
  */
 @Service("gamePicListService")
 public class GamePicListServiceImpl implements IGamePicListService{

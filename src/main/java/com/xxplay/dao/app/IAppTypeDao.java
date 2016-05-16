@@ -24,7 +24,7 @@ public interface IAppTypeDao {
      * @param pageParams
      * @return
      *
-     * @author:陈明
+     * @author:chenssy
      * @date : 2016年4月22日 下午11:50:16
      */
 	List<AppType> getAppListPage(PageParams pageParams);
@@ -34,7 +34,7 @@ public interface IAppTypeDao {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月22日 下午11:50:04
 	 */
 	int getAppListCountPage();
@@ -44,7 +44,7 @@ public interface IAppTypeDao {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月23日 下午6:55:42
 	 */
 	List<AppType> getAppTypes();

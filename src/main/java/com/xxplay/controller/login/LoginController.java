@@ -22,12 +22,8 @@ import com.xxplay.service.base.IMenuService;
 /**
  * 登录Controller
  * 
- * @file:LoginController.java
- * @package_name:com.xxplay.controller.admin
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
+ * @Copyright chenssy   2016 All Rights Reserved.
  * 
  * @date:2016年4月9日
  */
@@ -47,7 +43,7 @@ public class LoginController {
 	 * @param params
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	@RequestMapping("/checkAdmin")
@@ -79,7 +75,7 @@ public class LoginController {
 	 * @param password
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @throws ServiceException 
 	 * @date : 2016年4月9日
 	 */
@@ -101,7 +97,7 @@ public class LoginController {
 	 * 
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @throws ServiceException 
 	 * @date : 2016年4月11日
 	 */
@@ -123,7 +119,7 @@ public class LoginController {
 	 * @return
 	 * @throws ServiceException
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月12日
 	 */
 	@SuppressWarnings("unchecked")

@@ -8,14 +8,8 @@ import com.xxplay.core.base.AppContextUtils;
 
 /**
  * 服务层异常类，添加错误码
- * 
- * @file:ServiceException.java
- * @package_name:com.xxplay.exception
- * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
  */
 @SuppressWarnings("serial")

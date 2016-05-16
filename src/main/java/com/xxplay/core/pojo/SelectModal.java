@@ -2,18 +2,6 @@ package com.xxplay.core.pojo;
 
 import java.io.Serializable;
 
-/**
- * ѡ���Ԫ��
- * 
- * @file:SelectModal.java
- * @package_name:com.xxplay.pojo.base
- * @Project:xxplay
- *
- * @Author:����
- * @Copyright ����   2016 All Rights Reserved.
- * 
- * @date:2016��4��8��
- */
 @SuppressWarnings("serial")
 public class SelectModal implements Serializable{
 	private String value;

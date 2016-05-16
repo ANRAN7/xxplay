@@ -7,12 +7,7 @@ import com.xxplay.pojo.base.PubSysApr;
 /**
  * 系统应用参数DAO层
  * 
- * @file:IPubSysAprDao.java
- * @package_name:com.xxplay.dao.base
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
  * 
  */
 public interface IPubSysAprDao {

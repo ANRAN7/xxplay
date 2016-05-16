@@ -19,14 +19,9 @@ import com.xxplay.service.gameCenter.IGameCategoryService;
 /**
  * 游戏分类服务层 实现类
  * 
- * @file:GameCategoryServiceImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月22日 下午11:37:26
+ * 
  */
 @Service("gameCategoryService")
 public class GameCategoryServiceImpl implements IGameCategoryService{

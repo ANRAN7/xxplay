@@ -10,13 +10,7 @@ import java.util.Calendar;
 /**
  * 根据时间生成唯一序列ID
  * 
- * @file:GetSeqIdUtils.java
- * @package_name:com.xxplay.utils
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月17日
  */
 public class GenerateSequenceUtil {

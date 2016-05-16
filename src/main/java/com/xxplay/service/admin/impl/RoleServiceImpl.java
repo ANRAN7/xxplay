@@ -13,14 +13,9 @@ import com.xxplay.service.admin.IRoleService;
 /**
  * 用户权限服务 实现类
  * 
- * @file:RoleServiceImpl.java
- * @package_name:com.xxplay.service.admin.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月16日
+ * 
  */
 @Service("roleService")
 public class RoleServiceImpl implements IRoleService{

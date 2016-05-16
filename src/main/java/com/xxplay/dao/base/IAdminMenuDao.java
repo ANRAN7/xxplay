@@ -23,7 +23,7 @@ public interface IAdminMenuDao {
      * @param id
      * @return
      *
-     * @author:陈明
+     * @author:chenssy
      */
 	List<AdminMenu> getAdminMenus(String adminId);
 
@@ -32,7 +32,7 @@ public interface IAdminMenuDao {
 	 *
 	 * @param adminId
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月17日
 	 */
 	void delteAdminMenu(String adminId);

@@ -10,10 +10,10 @@ import java.util.Date;
 
 /**
  * @desc:时间处理工具类
- * @Project:JUtils
- * @file:DateUtils.java
+ * 
  * @Author:chenssy
  * @date:2014年8月4日
+ * 
  */
 public class DateUtils {
 	/** yyyy:年 */

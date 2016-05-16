@@ -6,14 +6,9 @@ import java.util.Map;
 /**
  * 分页查询参数工具类，继承HashMap<br>
  * 
- * @file:PageParamsUtils.java
- * @package_name:com.xxplay.core.pojo
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月16日
+ * 
  */
 @SuppressWarnings({ "serial", "rawtypes" })
 public class PageParams extends HashMap{
@@ -32,7 +27,7 @@ public class PageParams extends HashMap{
 	 * @param pageNo
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	@SuppressWarnings("unchecked")
@@ -57,7 +52,7 @@ public class PageParams extends HashMap{
 	 * 				参数
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	@SuppressWarnings({ "unchecked" })
@@ -87,7 +82,7 @@ public class PageParams extends HashMap{
 	 * 				参数
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	@SuppressWarnings({ "unchecked" })

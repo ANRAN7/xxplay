@@ -8,13 +8,8 @@ import com.xxplay.pojo.admin.Admin;
 
 /**
  * 管理员服务层 接口
- * @file:IAdminService.java
- * @package_name:com.xxplay.service.admin
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
  * 
+ * @Author:chenssy
  * @date:2016年4月9日
  */
 public interface IAdminService {
@@ -25,7 +20,7 @@ public interface IAdminService {
 	 * @param userName
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public Admin getAdminByUserName(String userName);
@@ -36,7 +31,7 @@ public interface IAdminService {
 	 * @param userName
 	 * @param params
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @throws ServiceException 
 	 * @date : 2016年4月9日
 	 */
@@ -49,7 +44,7 @@ public interface IAdminService {
 	 * 				查询参数
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	public PageBean queryAdminListPage(Map<String, String> params);
@@ -60,7 +55,7 @@ public interface IAdminService {
 	 * @param admin
 	 * 				管理员基本信息
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @throws ServiceException 
 	 * @date : 2016年4月17日
 	 */
@@ -74,7 +69,7 @@ public interface IAdminService {
 	 * @param status
 	 * 				更改状态
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月17日
 	 */
 	public void updateAdminStatus(String id, String status);
@@ -86,7 +81,7 @@ public interface IAdminService {
 	 *
 	 * @param id
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月17日
 	 */
 	public void deleteAdmin(String id);
@@ -97,7 +92,7 @@ public interface IAdminService {
 	 * @param id
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月19日
 	 */
 	public Admin getAdminById(String id);
@@ -107,7 +102,7 @@ public interface IAdminService {
 	 * 
 	 * @param admin
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月19日
 	 */
 	public void updateAdmin(Admin admin);

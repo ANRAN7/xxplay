@@ -12,13 +12,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 /**
  * 上传文件的工具类
  * 
- * @file:RequestFileUtils.java
- * @package_name:com.xxplay.utils
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月26日 下午11:51:36
  */
 public class RequestFileUtils {
@@ -34,7 +28,7 @@ public class RequestFileUtils {
 	 * @return
 	 * 			上传成功返回文件路径，否则返回null
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月26日 下午11:53:22
 	 */
 	public static String uploadFile(HttpServletRequest request,String inputName,String path){
@@ -53,7 +47,7 @@ public class RequestFileUtils {
 	 * 				文件保存路径
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月14日 下午12:11:24
 	 */
 	public static String uploadFile(CommonsMultipartFile file,String path){

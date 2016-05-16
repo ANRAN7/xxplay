@@ -21,14 +21,8 @@ import com.xxplay.service.admin.IRoleService;
 
 /**
  * 用户管理Controller
- * 
- * @file:AdminManagerController.java
- * @package_name:com.xxplay.controller.admin
- * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月13日
  */
 @Controller
@@ -46,7 +40,7 @@ public class AdminManagerController {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月13日
 	 */
 	@RequestMapping("/adminIndex")
@@ -60,7 +54,7 @@ public class AdminManagerController {
 	 * @param params
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月16日
 	 */
 	@RequestMapping("/queryAdminList")
@@ -74,7 +68,7 @@ public class AdminManagerController {
 	 * @param model
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月17日
 	 */
 	@RequestMapping("/addManagerInit")
@@ -123,7 +117,7 @@ public class AdminManagerController {
 	 * @param params
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月17日
 	 */
 	@RequestMapping("/updateAdminStatus")
@@ -146,7 +140,7 @@ public class AdminManagerController {
 	 * @param id
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月17日
 	 */
 	@RequestMapping("/deleteAdmin")
@@ -180,7 +174,7 @@ public class AdminManagerController {
 	 * @param admin
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月19日
 	 */
 	@RequestMapping("/updateManager")

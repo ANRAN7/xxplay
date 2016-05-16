@@ -17,12 +17,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 /**
  * CommonsMultipartResolver,监听文件上传
  * 
- * @file:CommonsMultipartResolverExt.java
- * @package_name:com.xxplay.listener
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
+ * @Author:chenssy
  * 
  */
 public class MultipartParsingResult extends CommonsMultipartResolver {

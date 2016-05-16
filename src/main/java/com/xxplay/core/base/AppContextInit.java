@@ -24,14 +24,10 @@ import com.xxplay.service.base.IPubSysAprService;
 /**
  * 系统初始化,跟随Spring容器一起启动<br>
  * 主要加载系统配置参数，对系统应用环境进行配置管理
- * @file:AppContextInit.java
- * @package_name:com.xxplay.core.base
- * @Project:xxplay
  *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
+ * 
  */
 public class AppContextInit extends ContextLoaderListener{
 	private final static Logger logger = Logger.getLogger(AppContextInit.class);
@@ -67,7 +63,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	private Map<String, String> initErrors() {
@@ -87,7 +83,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	private List<Menu> initMenu() {
@@ -101,13 +97,12 @@ public class AppContextInit extends ContextLoaderListener{
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	private Map<String,Map<String, String>> initAppSysApr() {
 		Map<String,Map<String, String>> sysPar = new HashMap<String, Map<String,String>>();
 		
-		//��ȡϵͳ���ò���
 		IPubSysAprService pubSysAprService = (IPubSysAprService) AppContextUtils.getBean("pubSysAprService");
 		List<PubSysApr> list = pubSysAprService.getPubSysAprs();
 		Map<String, String> codeMap = null;
@@ -128,7 +123,7 @@ public class AppContextInit extends ContextLoaderListener{
 	 * @param file
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	@SuppressWarnings("rawtypes")

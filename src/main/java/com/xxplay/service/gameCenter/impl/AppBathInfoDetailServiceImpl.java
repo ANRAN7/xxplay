@@ -23,14 +23,9 @@ import com.xxplay.utils.ApkReadUtils;
 /**
  * 批量上传游戏任务详情服务 实现类
  * 
- * @file:AppBathInfoDetailServiceImpl.java
- * @package_name:com.xxplay.service.gameCenter.impl
- * @Project:xxplay
- *
  * @Author:chenssy
- * @Copyright chenssy   2016 All Rights Reserved.
- * 
  * @date:2016年5月14日 下午12:47:39
+ * 
  */
 @Service("appBathInfoDetailService")
 public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{

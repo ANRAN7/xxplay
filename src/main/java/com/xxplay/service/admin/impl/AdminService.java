@@ -24,14 +24,9 @@ import com.xxplay.utils.IConstant;
 /**
  * 管理员服务 实现类
  * 
- * @file:AdminService.java
- * @package_name:com.xxplay.service.admin.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月9日
+ * 
  */
 @Service("adminService")
 public class AdminService implements IAdminService{
@@ -68,7 +63,7 @@ public class AdminService implements IAdminService{
 	 * @param adminPassword
 	 * 						用户登录密码
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	private void checkAdminPassword(String inputPassword, String adminPassword) {

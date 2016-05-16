@@ -13,14 +13,9 @@ import com.xxplay.service.base.IAdminMenuService;
 /**
  * 管理员与菜单对应关系服务类  实现类 
  * 
- * @file:AdminMenuServiceImpl.java
- * @package_name:com.xxplay.service.base.impl
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月10日
+ * 
  */
 @Service("adminMenuService")
 class AdminMenuServiceImpl implements IAdminMenuService{

@@ -20,7 +20,7 @@ public class AppContextUtils {
 	 * @param beanId
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public static Object getBean(String beanId) {
@@ -33,7 +33,7 @@ public class AppContextUtils {
 	 * @param key
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public static List<SelectModal> getSelectModals(String key){
@@ -60,7 +60,7 @@ public class AppContextUtils {
 	 * @param value
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public static String getSysAprName(String code,String value){
@@ -81,7 +81,7 @@ public class AppContextUtils {
 	 * 			properties的key
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月9日
 	 */
 	public static String getPropertiesValue(String key){
@@ -97,7 +97,7 @@ public class AppContextUtils {
 	 * @param errorCode
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月10日
 	 */
 	public static String getErrorValue(String errorCode){
@@ -112,7 +112,7 @@ public class AppContextUtils {
 	 *
 	 * @return
 	 *
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年4月10日
 	 */
 	public static List<Menu> getMenus(){

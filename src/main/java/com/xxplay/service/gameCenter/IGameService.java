@@ -12,14 +12,9 @@ import com.xxplay.pojo.exportExcel.GameInfoExcelModel;
 /**
  * 游戏服务 接口
  * 
- * @file:IGameService.java
- * @package_name:com.xxplay.service.gameCenter
- * @Project:xxplay
- *
- * @Author:陈明
- * @Copyright 陈明   2016 All Rights Reserved.
- * 
+ * @Author:chenssy
  * @date:2016年4月19日
+ * 
  */
 public interface IGameService {
 
@@ -39,7 +34,7 @@ public interface IGameService {
 	 * 						apk信息
 	 * @return	id
 	 * 						游戏的id
-	 * @author:陈明
+	 * @author:chenssy
 	 * @date : 2016年5月3日 下午10:33:59
 	 */
 	int addGame(Admin admin, Map<String, String> appInfoMap,
