@@ -73,7 +73,8 @@ public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{
 			infoDetail.setStatus(IConstant.GAME_SAVE_BATH_STATUS_FAILED);
 			infoDetail.setErrorTips("解析apk包错误，apk包名：" + infoDetail.getApkName());
 			appBathInfoDetailDao.updateByPrimaryKey(infoDetail);
-			return;
+			//抛出异常，提供给线程池来判断任务执行状态
+			throw new RuntimeException(e);
 		}
 		
 		try {
@@ -102,6 +103,9 @@ public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{
 			infoDetail.setStatus(IConstant.GAME_SAVE_BATH_STATUS_FAILED);
 			infoDetail.setErrorTips("保存游戏信息出错");
 			appBathInfoDetailDao.updateByPrimaryKey(infoDetail);
+			
+			//抛出异常，提供给线程池来判断任务执行状态
+			throw new RuntimeException(e);
 		}
 		
 		//设置任务为成功
