@@ -13,6 +13,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:spring/applicationContext.xml;
+			classpath:spring/spring-druid.xml;
 		</param-value>
 	</context-param>
 	
@@ -55,6 +56,16 @@
 		<servlet-name>SpringMVC</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
+	<!-- 配置druid Servlet -->
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>  
 	
 	<!-- 配置session超时时间，单位分钟 -->
 	<session-config>

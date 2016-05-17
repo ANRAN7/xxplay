@@ -23,22 +23,36 @@
   	</bean>
   
 	<!-- 配置数据源 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName" value="${driver}" />
-		<property name="url" value="${url}" />
-		<property name="username" value="root" />
-		<property name="password" value="mysql" />
-		<!-- 初始化连接大小 -->
-		<property name="initialSize" value="${initialSize}" />
-		<!-- 连接池最大数量 -->
-		<property name="maxActive" value="${maxActive}" />
-		<!-- 连接池最大空闲 -->
-		<property name="maxIdle" value="${maxIdle}" />
-		<!-- 连接池最小空闲 -->
-		<property name="minIdle" value="${minIdle}" />
-		<!-- 获取连接最大等待时间 -->
-		<property name="maxWait" value="${maxWait}" />
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"  
+			init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />  
+        <property name="url" value="${jdbc.url}" />  
+        <property name="username" value="${jdbc.username}" />  
+        <property name="password" value="${jdbc.password}" /> 
+        
+		<!-- 初始化连接大小 -->  
+        <property name="initialSize" value="${jdbc.initialSize}" />  
+        <!-- 连接池最大使用连接数量 -->  
+        <property name="maxActive" value="${jdbc.maxActive}" />  
+        <!-- 连接池最小空闲 -->  
+        <property name="minIdle" value="${jdbc.minIdle}" />  
+        <!-- 获取连接最大等待时间 -->  
+        <property name="maxWait" value="${jdbc.maxWait}" />
+          
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}" />  
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
+        <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />  
+  
+        <!-- 打开removeAbandoned功能 -->  
+        <property name="removeAbandoned" value="${jdbc.removeAbandoned}" />  
+        <!-- 1800秒，也就是30分钟 -->  
+        <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}" />  
+        <!-- 关闭abanded连接时输出错误日志 -->  
+        <property name="logAbandoned" value="${jdbc.logAbandoned}" />  
+  
+        <!-- 监控数据库 -->  
+        <property name="filters" value="${jdbc.filters}" />  
 	</bean>
 
 	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
