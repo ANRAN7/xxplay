@@ -100,13 +100,18 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 				//等待所有线程全部执行完成
 				countDownLatch.await();
 				LOGGER.info("所有执行解析线程任务均已完成...,开始分析解析结果....");
+				String result = null;
 				if(excuteRightFlag && !excuteErrorFlag){	//有正确、无错误，标识任务全部成功
 					bathInfo.setStatus(IConstant.GAME_SAVE_BATH_STATUS_SUCCESS);
+					result = "成功";
 				}else if(excuteRightFlag && excuteErrorFlag){	//有正确，有错误，标识任务为部分成功
 					bathInfo.setStatus(IConstant.GAME_SAVE_BATH_STATUS_PARTIALSUCCESS);
+					result = "部分成功";
 				}else{			//标识任务为失败
 					bathInfo.setStatus(IConstant.GAME_SAVE_BATH_STATUS_FAILED);
+					result = "失败";
 				}
+				LOGGER.info("所有执行解析线程任务均已完成...,任务解析结果为：" + result);
 				appBathInfoService.updateAppBathInfo(bathInfo);		//更改批次任务执行情况
 			} catch (InterruptedException e) {
 				e.printStackTrace();
