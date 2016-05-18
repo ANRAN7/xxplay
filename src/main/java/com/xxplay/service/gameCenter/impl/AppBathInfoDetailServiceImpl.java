@@ -97,6 +97,11 @@ public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{
 			//保存图片列表
 			String[] pics = infoDetail.getPicList().split(",");
 			gamePicListService.saveGamePickList(Arrays.asList(pics), appInfos.getId());
+			
+			//设置任务为成功
+			infoDetail.setStatus(IConstant.GAME_SAVE_BATH_STATUS_SUCCESS);
+			appBathInfoDetailDao.updateByPrimaryKey(infoDetail);
+			
 		} catch (Exception e) {
 			LOGGER.error("执行解析游戏任务失败（保存游戏错误）....error:" + e.getMessage(), e);
 			//标注失败
@@ -107,11 +112,6 @@ public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{
 			//抛出异常，提供给线程池来判断任务执行状态
 			throw new RuntimeException(e);
 		}
-		
-		//设置任务为成功
-		infoDetail.setStatus(IConstant.GAME_SAVE_BATH_STATUS_SUCCESS);
-		appBathInfoDetailDao.updateByPrimaryKey(infoDetail);
-		
 		LOGGER.info("执行游戏解析任务成功......游戏名称：" + infoDetail.getAppName());
 	}
 	

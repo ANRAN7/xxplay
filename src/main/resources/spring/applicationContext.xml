@@ -55,7 +55,7 @@
         <property name="filters" value="${jdbc.filters}" />  
 	</bean>
 
-	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+	<!-- spring和MyBatis整合，不需要mybatis的配置映射文件 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描mapping.xml文件 -->
@@ -73,17 +73,27 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+	<!-- 声明事务 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">  
 	    <tx:attributes>  
 	      <tx:method name="delete*" propagation="REQUIRED" read-only="false"/>
-	      <tx:method name="add*" propagation="REQUIRED" read-only="false"  />
-	      <tx:method name="save*" propagation="REQUIRED" read-only="false"  />
-	      <tx:method name="update*" propagation="REQUIRED" read-only="false" />
+	      <tx:method name="remove*" propagation="REQUIRED" read-only="false"/>
 	      
+	      <tx:method name="add*" propagation="REQUIRED" read-only="false"/>
+	      <tx:method name="save*" propagation="REQUIRED"  read-only="false"/>
+	      <tx:method name="insert*" propagation="REQUIRED"  read-only="false"/>  
+	      
+	      <tx:method name="update*" propagation="REQUIRED" read-only="false" />
+	      <tx:method name="modify*" propagation="REQUIRED"/>  
+          <tx:method name="edit*" propagation="REQUIRED"/>  
+            
 	      <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
 	      <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
 	      <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
 	      <tx:method name="query*" propagation="SUPPORTS" read-only="true"/>
+	      <tx:method name="load*" propagation="SUPPORTS"  read-only="true"/>  
+	      
+	      <tx:method name="*" propagation="SUPPORTS"  read-only="true"/>  
 	    </tx:attributes>  
 	</tx:advice>  
 	
