@@ -60,7 +60,7 @@ public class AppBathInfoDetailServiceImpl implements IAppBathInfoDetailService{
 		LOGGER.info("执行解析游戏任务开始....游戏名称：" + infoDetail.getAppName());
 		AppInfos appInfos = new AppInfos();
 		BeanUtils.copyProperties(infoDetail, appInfos);
-		appInfos.setId(null);
+		appInfos.setPackName(infoDetail.getApkName());
 		//解析apk包
 		PackInfo packInfo = null;
 		try {

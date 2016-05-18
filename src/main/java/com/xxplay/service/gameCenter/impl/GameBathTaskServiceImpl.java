@@ -74,6 +74,8 @@ public class GameBathTaskServiceImpl implements IGameBathTaskService{
 			ExecutorService executorService = Executors.newFixedThreadPool(5);		//线程池大小为5
 			//迭代任务
 			for(final AppBathInfoDetail infoDetail : bathInfoDetails){
+				infoDetail.setCreateAdmin(bathInfo.getCreateId());
+				infoDetail.setCreatTime(DateUtils.getCurrentDate());
 				Future<?> future = executorService.submit(new Runnable() {
 					@Override
 					public void run() {

@@ -1,5 +1,7 @@
 package com.xxplay.pojo.app;
 
+import java.util.Date;
+
 public class AppBathInfoDetail {
     private Integer id;
 
@@ -34,6 +36,10 @@ public class AppBathInfoDetail {
     private String status;
     
     private String errorTips;
+    
+    private Date creatTime;
+
+    private String createAdmin;
 
     public Integer getId() {
         return id;
@@ -169,5 +175,21 @@ public class AppBathInfoDetail {
 
 	public void setErrorTips(String errorTips) {
 		this.errorTips = errorTips;
+	}
+
+	public Date getCreatTime() {
+		return creatTime;
+	}
+
+	public void setCreatTime(Date creatTime) {
+		this.creatTime = creatTime;
+	}
+
+	public String getCreateAdmin() {
+		return createAdmin;
+	}
+
+	public void setCreateAdmin(String createAdmin) {
+		this.createAdmin = createAdmin;
 	}
 }
