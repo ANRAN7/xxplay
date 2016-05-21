@@ -31,7 +31,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<label class="col-md-3 control-label" ><span class="require">*</span> 登录名：</label>
+							<label class="col-md-3 control-label" ><span class="require">*</span> 登录密码：</label>
 							<div class="col-md-6">
 								<input id="password" class="form-control" placeholder="登录密码" name="password">
 							</div>

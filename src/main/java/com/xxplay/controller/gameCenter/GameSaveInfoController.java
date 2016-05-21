@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,7 +47,7 @@ import com.xxplay.utils.RequestFileUtils;
 @Controller
 @RequestMapping("/saveGameInfo")
 public class GameSaveInfoController {
-	private static final Logger LOGGER = Logger.getLogger(GameSaveInfoController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GameSaveInfoController.class);
 	
 	@Resource
 	private IGameService gameService;

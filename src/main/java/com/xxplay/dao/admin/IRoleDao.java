@@ -1,36 +1,27 @@
 package com.xxplay.dao.admin;
 
 import java.util.List;
+import java.util.Map;
 
+import com.xxplay.core.pojo.PageParams;
 import com.xxplay.pojo.admin.Role;
 
-/**
- * 管理员角色DAO层
- * 
- * @Author:chenssy
- * @date:2016年4月9日
- * 
- */
 public interface IRoleDao {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Role record);
 
     int insertSelective(Role record);
 
-    Role selectByPrimaryKey(String id);
+    Role selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
 
-    /**
-     * 获取权限列表
-     *
-     * @return
-     *
-     * @author:chenssy
-     * @date : 2016年4月16日
-     */
-	List<Role> getRoleList();
+	List<Role> getRoleList(Map<String, Object> params);
+
+	List<Role> getRoleListPage(PageParams params);
+	
+	Integer getRoleCountPage();
 }

@@ -6,7 +6,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ import com.xxplay.utils.IConstant;
  */
 @Service("gameService")
 public class GameServiceImpl implements IGameService{
-	private final static Logger LOGGER = Logger.getLogger(GameServiceImpl.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(GameServiceImpl.class);
 	
 	@Resource
 	private IGameApkService gameApkService;

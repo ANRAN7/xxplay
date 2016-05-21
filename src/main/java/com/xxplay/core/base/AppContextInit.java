@@ -9,7 +9,8 @@ import java.util.ResourceBundle;
 
 import javax.servlet.ServletContextEvent;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -30,7 +31,7 @@ import com.xxplay.service.base.IPubSysAprService;
  * 
  */
 public class AppContextInit extends ContextLoaderListener{
-	private final static Logger logger = Logger.getLogger(AppContextInit.class);
+	private final static Logger logger = LoggerFactory.getLogger(AppContextInit.class);
 	
 	private static ApplicationContext context;
 	

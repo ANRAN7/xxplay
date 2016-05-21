@@ -6,6 +6,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.xxplay.core.pojo.PageBean;
+import com.xxplay.core.pojo.PageParams;
 import com.xxplay.dao.admin.IRoleDao;
 import com.xxplay.pojo.admin.Role;
 import com.xxplay.service.admin.IRoleService;
@@ -24,7 +26,23 @@ public class RoleServiceImpl implements IRoleService{
 
 	@Override
 	public List<Role> getRoleSelectModal() {
-		return roleDao.getRoleList();
+		return roleDao.getRoleList(null);
 	}
-	
+
+	@Override
+	public PageBean getRoleListPage(int pageNo) {
+		PageParams params = PageParams.getInstance(pageNo);
+		
+		List<Role> roles = roleDao.getRoleListPage(params);
+		Integer totalNo = roleDao.getRoleCountPage();
+		
+		
+		return new PageBean(totalNo, roles, pageNo);
+	}
+
+	@Override
+	public void updateRole(Role role) {
+		roleDao.updateByPrimaryKeySelective(role);
+	}
+
 }

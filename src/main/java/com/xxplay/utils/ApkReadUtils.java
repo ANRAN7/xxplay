@@ -11,7 +11,8 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xmlpull.v1.XmlPullParser;
 
 import sun.security.pkcs.*;
@@ -37,7 +38,7 @@ import com.xxplay.pojo.app.PackInfo;
  * 
  */
 public class ApkReadUtils {
-	private static final Logger LOGGER = Logger.getLogger(ApkReadUtils.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ApkReadUtils.class);
 	
 	private static final float RADIX_MULTS[] = { 0.00390625F, 3.051758E-005F, 1.192093E-007F, 4.656613E-010F };
 	private static final String DIMENSION_UNITS[] = { "px", "dip", "sp", "pt", "in", "mm", "", "" };

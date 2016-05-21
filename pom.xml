@@ -188,7 +188,7 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.5-FINAL</version>
-		</dependency> 
+		</dependency>
 	</dependencies>
 	
 	<!-- 整合mybatis自动生成代码 -->

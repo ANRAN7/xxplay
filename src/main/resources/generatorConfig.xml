@@ -36,12 +36,12 @@
 		</javaClientGenerator>
 		<!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名 -->
 			
-		<table tableName="t_app_bath_info" domainObjectName="AppBathInfo"
+		<table tableName="t_role" domainObjectName="Role"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />
 			
-		<table tableName="t_app_bath_info_detail" domainObjectName="AppBathInfoDetail"
+		<table tableName="t_role_menu" domainObjectName="RoleMenu"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />

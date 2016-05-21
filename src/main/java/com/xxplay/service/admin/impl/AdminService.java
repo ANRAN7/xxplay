@@ -6,7 +6,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.xxplay.core.base.AppContextUtils;
@@ -16,9 +17,9 @@ import com.xxplay.core.pojo.PageParams;
 import com.xxplay.dao.admin.IAdminDao;
 import com.xxplay.pojo.admin.Admin;
 import com.xxplay.service.admin.IAdminService;
+import com.xxplay.service.admin.IPasswordService;
 import com.xxplay.service.base.IAdminMenuService;
 import com.xxplay.utils.Des;
-import com.xxplay.utils.GenerateSequenceUtil;
 import com.xxplay.utils.IConstant;
 
 /**
@@ -30,12 +31,15 @@ import com.xxplay.utils.IConstant;
  */
 @Service("adminService")
 public class AdminService implements IAdminService{
-	private static Logger logger = Logger.getLogger(AdminService.class);
+	private static Logger logger = LoggerFactory.getLogger(AdminService.class);
 	@Resource
 	private IAdminDao adminDao;
 
 	@Resource
 	private IAdminMenuService adminMenuService;
+	
+	@Resource
+	private IPasswordService passwordService;
 	
 	@Override
 	public Admin getAdminByUserName(String userName) {
@@ -87,11 +91,10 @@ public class AdminService implements IAdminService{
 		if(admin1 != null){
 			throw new ServiceException("","该管理员用户名已经存在了，请重新输入");
 		}
-		
-		admin.setId(GenerateSequenceUtil.generateSequenceNo());
 		admin.setCreateTime(new Date());
 		admin.setStatus(IConstant.ADMIN_STUTS_USING);		//用户状态：启用 
-		
+		//处理登录密码
+		admin.setPassword(passwordService.getUserLoginPassword(admin.getPassword()));
 		adminDao.insert(admin);
 	}
 

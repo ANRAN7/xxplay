@@ -10,7 +10,8 @@ import java.util.concurrent.Future;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.xxplay.core.utils.DateUtils;
@@ -30,7 +31,7 @@ import com.xxplay.utils.IConstant;
  */
 @Service("gameBathTaskService")
 public class GameBathTaskServiceImpl implements IGameBathTaskService{
-	private final static Logger LOGGER = Logger.getLogger(GameBathTaskServiceImpl.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(GameBathTaskServiceImpl.class);
 	@Resource
 	private IAppBathInfoService appBathInfoService;
 	

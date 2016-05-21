@@ -403,7 +403,7 @@
 								<h4 class="mtn">菜单展示形式</h4> <select id="list-header"
 								class="form-control">
 									<option value="header-static">浮动</option>
-									<option value="header-fixed" selected="selected">固定</option>
+									<option value="header-fixed">固定</option>
 							</select>
 							</li>
 							<li style="display: none">

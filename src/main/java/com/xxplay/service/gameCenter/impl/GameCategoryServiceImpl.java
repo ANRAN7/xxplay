@@ -6,7 +6,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.xxplay.core.exception.ServiceException;
@@ -25,7 +26,7 @@ import com.xxplay.service.gameCenter.IGameCategoryService;
  */
 @Service("gameCategoryService")
 public class GameCategoryServiceImpl implements IGameCategoryService{
-	private final static Logger LOGGER = Logger.getLogger(GameCategoryServiceImpl.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(GameCategoryServiceImpl.class);
 
 	@Resource
 	private IAppTypeDao appTypeDao;
