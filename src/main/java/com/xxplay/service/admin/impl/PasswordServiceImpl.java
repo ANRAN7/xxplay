@@ -4,7 +4,9 @@ import org.springframework.stereotype.Service;
 
 import com.JUtils.encrypt.EncryptAndDecryptUtils;
 import com.xxplay.core.base.AppContextUtils;
+import com.xxplay.core.exception.ServiceException;
 import com.xxplay.service.admin.IPasswordService;
+import com.xxplay.utils.Des;
 
 /**
  * 密码服务  实现类
@@ -14,9 +16,10 @@ import com.xxplay.service.admin.IPasswordService;
  */
 @Service("passwordService")
 public class PasswordServiceImpl implements IPasswordService{
-	
 	@Override
 	public String getUserLoginPassword(String password) {
+		//登录密码DES解密
+		password = Des.strDec(password, AppContextUtils.getPropertiesValue("login-key"), null, null);
 		//先是md5加密
 		password = EncryptAndDecryptUtils.md5Encrypt(password);
 		//再是AES加密
@@ -24,4 +27,17 @@ public class PasswordServiceImpl implements IPasswordService{
 		return password;
 	}
 
+	@Override
+	public void checkAdminPassword(String loginPassword, String adminPassword) throws ServiceException {
+		//登录密码md5加密
+		loginPassword = EncryptAndDecryptUtils.md5Encrypt(loginPassword);
+		adminPassword = EncryptAndDecryptUtils.aesDecrypt(adminPassword, AppContextUtils.getPropertiesValue("login-key"));
+	
+		//密码模式，判断登录是否需要密码
+		String passwordModel =  AppContextUtils.getPropertiesValue("passWordModel");
+		
+		if("1".equals(passwordModel) && !loginPassword.equals(adminPassword)){
+			throw new ServiceException("EC10002");
+		}
+	}
 }

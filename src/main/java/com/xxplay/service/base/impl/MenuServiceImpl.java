@@ -3,7 +3,9 @@ package com.xxplay.service.base.impl;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -66,6 +68,46 @@ public class MenuServiceImpl implements IMenuService{
 		//构建菜单MenuItem
 		return buildMenuItem(menus);
 	}
+	
+	@Override
+	public Map<Menu, List<MenuItem>> getMenuMap() {
+		//获取所有的菜单
+		List<Menu> menus = AppContextUtils.getMenus();
+		//构建一级菜单
+		List<Menu> firstMenu = getFirstMenu(menus);
+		
+		//构建菜单结构
+		Map<Menu, List<MenuItem>> resultMap = new HashMap<Menu, List<MenuItem>>();
+		MenuItem item = null;
+		List<MenuItem> items = null;
+		for(Menu menu : firstMenu){
+			item = new MenuItem();
+			BeanUtils.copyProperties(menu, item); 		//属性拷贝
+			items = buildChildItems(item,menus);
+			resultMap.put(menu, items);
+		}
+		
+		return resultMap;
+	}
+	
+	/**
+	 * 获取一级菜单
+	 *
+	 * @author:chenssy
+	 * @data : 2016年5月22日 上午10:10:26
+	 *
+	 * @param menus
+	 * @return
+	 */
+	private List<Menu> getFirstMenu(List<Menu> menus){
+		List<Menu> firstMenu = new ArrayList<Menu>();
+		for (Menu menu : menus) {
+			if (StringUtils.isBlank(menu.getMenuParentid()) || "0".equals(menu.getMenuParentid())) {
+				firstMenu.add(menu);
+			}
+		}
+		return firstMenu;
+	}
 
 	/**
 	 * 构建菜单树<br>
@@ -78,13 +120,7 @@ public class MenuServiceImpl implements IMenuService{
 	 * @date : 2016年4月10日
 	 */
 	private List<MenuItem> buildMenuItem(List<Menu> menus) {
-		//获取一级菜单
-		List<Menu> firstMenu = new ArrayList<Menu>();
-		for(Menu menu : menus){
-			if(StringUtils.isBlank(menu.getMenuParentid()) || "0".equals(menu.getMenuParentid())){
-				firstMenu.add(menu);
-			}
-		}
+		List<Menu> firstMenu = getFirstMenu(menus);
 		
 		//根据一级菜单构建菜单树
 		List<MenuItem> items = new ArrayList<MenuItem>(firstMenu.size());

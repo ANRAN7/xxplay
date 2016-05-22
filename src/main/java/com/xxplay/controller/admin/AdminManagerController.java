@@ -165,7 +165,7 @@ public class AdminManagerController {
 		model.addAttribute("roles", roles);
 		model.addAttribute("admin",admin);
 		 
-		return "/admin/updateAdmin";
+		return "/admin/adminUpdate";
 	}
 	
 	/**

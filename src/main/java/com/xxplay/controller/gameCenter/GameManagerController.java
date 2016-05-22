@@ -26,8 +26,6 @@ import com.xxplay.service.gameCenter.IGameTabService;
 @Controller
 @RequestMapping("/gameManager")
 public class GameManagerController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(GameCategoryManagerController.class);
-	
 	@Resource
 	private IGameCategoryService gameCategoryService;
 	

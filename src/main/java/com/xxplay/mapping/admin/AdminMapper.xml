@@ -41,7 +41,7 @@
   </select>
   
   <select id="queryAdminListPage" resultMap="RoleResultMap" parameterType="java.util.Map">
-  	select ta.id, ta.user_name, password, real_name, create_time,role_id,status,role_name
+  	select ta.id, ta.user_name, password, real_name, ta.create_time,role_id,ta.status,role_name
 	from t_admin ta left join t_role tr on role_id = tr.id 
 	<where>
 		<if test="userName != null and userName != ''">

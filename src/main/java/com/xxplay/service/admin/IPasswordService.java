@@ -1,5 +1,7 @@
 package com.xxplay.service.admin;
 
+import com.xxplay.core.exception.ServiceException;
+
 /**
  * 密码服务接口
  *
@@ -19,5 +21,19 @@ public interface IPasswordService {
 	 * @return
 	 */
 	String getUserLoginPassword(String password);
+
+	/**
+	 * 校验登录密码
+	 *
+	 * @author:chenssy
+	 * @data : 2016年5月22日 下午3:39:36
+	 *
+	 * @param loginPassword
+	 * 							登录密码
+	 * @param adminPassword
+	 * 							管理员密码
+	 * @throws ServiceException 
+	 */
+	void checkAdminPassword(String loginPassword, String adminPassword) throws ServiceException;
 
 }

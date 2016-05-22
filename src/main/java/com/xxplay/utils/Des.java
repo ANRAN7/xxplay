@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Des {
     /**
-     * DES加密/解密
+     * DES加密
      * 
      * @Copyright Copyright (c) 2006
      * @author Guapo
@@ -182,8 +182,20 @@ public class Des {
         return encData;
     }
 
+    /**
+     * 解密
+     *
+     * @author:chenssy
+     * @data : 2016年5月22日 下午4:08:26
+     *
+     * @param data
+     * @param firstKey
+     * @param secondKey
+     * @param thirdKey
+     * @return
+     */
     @SuppressWarnings("rawtypes")
-	public String strDec(String data, String firstKey, String secondKey,
+	public static String strDec(String data, String firstKey, String secondKey,
             String thirdKey) {
         int leng = data.length();
         String decStr = "";
@@ -259,7 +271,7 @@ public class Des {
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-	public static List getKeyBytes(String key) {
+	private static List getKeyBytes(String key) {
         List keyBytes = new ArrayList();
         int leng = key.length();
         int iterator = (leng / 4);
@@ -368,7 +380,7 @@ public class Des {
      * 
      * return the bit(it's length = 4)
      */
-    public String hexToBt4(String hex) {
+    public static String hexToBt4(String hex) {
         String binary = "";
         if (hex.equalsIgnoreCase("0")) {
             binary = "0000";
@@ -425,7 +437,7 @@ public class Des {
      * 
      * return string
      */
-    public String byteToString(int[] byteData) {
+    private static String byteToString(int[] byteData) {
         String str = "";
         for (int i = 0; i < 4; i++) {
             int count = 0;
@@ -443,7 +455,7 @@ public class Des {
         return str;
     }
 
-    public static String bt64ToHex(int[] byteData) {
+    private static String bt64ToHex(int[] byteData) {
         String hex = "";
         for (int i = 0; i < 16; i++) {
             String bt = "";
@@ -455,7 +467,7 @@ public class Des {
         return hex;
     }
 
-    public String hexToBt64(String hex) {
+    private static String hexToBt64(String hex) {
         String binary = "";
         for (int i = 0; i < 16; i++) {
             binary += hexToBt4(hex.substring(i, i + 1));
@@ -467,7 +479,7 @@ public class Des {
      * the 64 bit des core arithmetic
      */
 
-    public static int[] enc(int[] dataByte, int[] keyByte) {
+    private static int[] enc(int[] dataByte, int[] keyByte) {
         int[][] keys = generateKeys(keyByte);
         int[] ipByte = initPermute(dataByte);
         int[] ipLeft = new int[32];
@@ -503,7 +515,7 @@ public class Des {
         return finallyPermute(finalData);
     }
 
-    public int[] dec(int[] dataByte, int[] keyByte) {
+    private static int[] dec(int[] dataByte, int[] keyByte) {
         int[][] keys = generateKeys(keyByte);
         int[] ipByte = initPermute(dataByte);
         int[] ipLeft = new int[32];
@@ -539,7 +551,7 @@ public class Des {
         return finallyPermute(finalData);
     }
 
-    public static int[] initPermute(int[] originalData) {
+    private static int[] initPermute(int[] originalData) {
         int[] ipByte = new int[64];
         int i = 0, m = 1, n = 0, j, k;
         for (i = 0, m = 1, n = 0; i < 4; i++, m += 2, n += 2) {
@@ -551,7 +563,7 @@ public class Des {
         return ipByte;
     }
 
-    public static int[] expandPermute(int[] rightData) {
+    private static int[] expandPermute(int[] rightData) {
         int[] epByte = new int[48];
         int i;
         for (i = 0; i < 8; i++) {
@@ -573,7 +585,7 @@ public class Des {
         return epByte;
     }
 
-    public static int[] xor(int[] byteOne, int[] byteTwo) {
+    private static int[] xor(int[] byteOne, int[] byteTwo) {
         int[] xorByte = new int[byteOne.length];
         for (int i = 0; i < byteOne.length; i++) {
             xorByte[i] = byteOne[i] ^ byteTwo[i];
@@ -581,7 +593,7 @@ public class Des {
         return xorByte;
     }
 
-    public static int[] sBoxPermute(int[] expandByte) {
+    private static int[] sBoxPermute(int[] expandByte) {
 
         // var sBoxByte = new Array(32);
         int[] sBoxByte = new int[32];
@@ -679,7 +691,7 @@ public class Des {
         return sBoxByte;
     }
 
-    public static int[] pPermute(int[] sBoxByte) {
+    private static int[] pPermute(int[] sBoxByte) {
         int[] pBoxPermute = new int[32];
         pBoxPermute[0] = sBoxByte[15];
         pBoxPermute[1] = sBoxByte[6];
@@ -716,7 +728,7 @@ public class Des {
         return pBoxPermute;
     }
 
-    public static int[] finallyPermute(int[] endByte) {
+    private static int[] finallyPermute(int[] endByte) {
         int[] fpByte = new int[64];
         fpByte[0] = endByte[39];
         fpByte[1] = endByte[7];
@@ -785,7 +797,7 @@ public class Des {
         return fpByte;
     }
 
-    public static String getBoxBinary(int i) {
+    private static String getBoxBinary(int i) {
         String binary = "";
         switch (i) {
         case 0:
@@ -844,26 +856,9 @@ public class Des {
      * generate 16 keys for xor
      * 
      */
-    public static int[][] generateKeys(int[] keyByte) {
+    private static int[][] generateKeys(int[] keyByte) {
         int[] key = new int[56];
         int[][] keys = new int[16][48];
-
-        // keys[ 0] = new Array();
-        // keys[ 1] = new Array();
-        // keys[ 2] = new Array();
-        // keys[ 3] = new Array();
-        // keys[ 4] = new Array();
-        // keys[ 5] = new Array();
-        // keys[ 6] = new Array();
-        // keys[ 7] = new Array();
-        // keys[ 8] = new Array();
-        // keys[ 9] = new Array();
-        // keys[10] = new Array();
-        // keys[11] = new Array();
-        // keys[12] = new Array();
-        // keys[13] = new Array();
-        // keys[14] = new Array();
-        // keys[15] = new Array();
         int[] loop = new int[] { 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1 };
 
         for (int i = 0; i < 7; i++) {

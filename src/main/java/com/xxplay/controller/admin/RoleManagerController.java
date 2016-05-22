@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xxplay.core.base.AppConstants;
 import com.xxplay.core.pojo.PageBean;
 import com.xxplay.core.web.BaseController;
-import com.xxplay.pojo.admin.Admin;
 import com.xxplay.pojo.admin.Role;
 import com.xxplay.service.admin.IRoleService;
+import com.xxplay.service.base.IMenuService;
 
 /**
  * 角色管理Controller
@@ -28,6 +27,10 @@ import com.xxplay.service.admin.IRoleService;
 public class RoleManagerController extends BaseController{
 	@Resource
 	private IRoleService roleService;
+	
+	@Resource
+	private IMenuService menuService;
+	
 	/**
 	 * 权限管理界面
 	 *
@@ -56,6 +59,15 @@ public class RoleManagerController extends BaseController{
 		return roleService.getRoleListPage(params.get("pageNo"));
 	}
 	
+	/**
+	 * 修改角色状态
+	 *
+	 * @author:chenssy
+	 * @data : 2016年5月22日 上午9:50:34
+	 *
+	 * @param role
+	 * @return
+	 */
 	@RequestMapping("/updateRoleStatus")
 	@ResponseBody
 	public Map<String, Object> updateRoleStatus(@RequestBody Role role){
@@ -69,5 +81,18 @@ public class RoleManagerController extends BaseController{
 		Map<String, Object> resultMap = new HashMap<String,Object>();
 		resultMap.put("result", result);
 		return resultMap;
+	}
+	
+	/**
+	 * 新增角色
+	 *
+	 * @author:chenssy
+	 * @data : 2016年5月22日 上午9:52:45
+	 *
+	 * @return
+	 */
+	@RequestMapping("/addRoleInit")
+	public String addRoleInit(){
+		return "/admin/roleEdit";
 	}
 }

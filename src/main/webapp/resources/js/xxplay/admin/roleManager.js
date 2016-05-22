@@ -2,7 +2,7 @@ $(function(){
 	turnPage(1);
 	
 	$("#addRole").click(function(){
-		parent.openModal("增加管理员","../role/addRoleInit","1000");
+		parent.openModal("增加角色","../role/addRoleInit","1000");
 	});
 });
 

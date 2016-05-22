@@ -4,7 +4,6 @@
 <head>
 </head>
 <body>
-	<div class="tab-content">
 		<div class="panel-body pan ">
 			<div class="row">
 				<div class="col-md-12">
@@ -123,6 +122,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>

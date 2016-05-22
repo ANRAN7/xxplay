@@ -53,25 +53,10 @@ public class AdminService implements IAdminService{
 			throw new ServiceException("EC10001");
 		}
 		//密码解码
-		password = Des.strEnc(password,AppContextUtils.getPropertiesValue("login-key"),null,null);
-		checkAdminPassword(password,admin.getPassword());
+		password = Des.strDec(password,AppContextUtils.getPropertiesValue("login-key"),null,null);
+		passwordService.checkAdminPassword(password,admin.getPassword());
 		
 		return admin;
-	}
-
-	/**
-	 * 判断用户密码是否正确
-	 *
-	 * @param inputPassword	
-	 * 						用户输入密码
-	 * @param adminPassword
-	 * 						用户登录密码
-	 *
-	 * @author:chenssy
-	 * @date : 2016年4月9日
-	 */
-	private void checkAdminPassword(String inputPassword, String adminPassword) {
-		
 	}
 
 	@Override

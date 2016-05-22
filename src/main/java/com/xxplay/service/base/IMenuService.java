@@ -1,6 +1,7 @@
 package com.xxplay.service.base;
 
 import java.util.List;
+import java.util.Map;
 
 import com.xxplay.core.exception.ServiceException;
 import com.xxplay.pojo.admin.Admin;
@@ -37,5 +38,15 @@ public interface IMenuService {
 	 * @date : 2016年4月10日
 	 */
 	List<MenuItem> getAdminMenuItem(Admin admin) throws ServiceException;
+
+	/**
+	 * 获取所有的菜单<br>
+	 * map形式为 id_name ---> list
+	 * @author:chenssy
+	 * @data : 2016年5月22日 上午10:02:41
+	 *
+	 * @return
+	 */
+	Map<Menu, List<MenuItem>> getMenuMap();
 
 }

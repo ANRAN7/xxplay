@@ -1,5 +1,7 @@
 package com.xxplay.core.web;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -93,5 +95,59 @@ public class BaseController {
      */
     protected Model getModel(){
     	return currentThreadModel.get();
+    }
+    
+    /**
+     * 向当前线程的model设置值
+     *
+     * @author:chenssy
+     * @data : 2016年5月22日 上午10:34:53
+     *
+     * @param key
+     * @param value
+     */
+    protected void setModelAttribute(String key,Object value){
+    	getModel().addAttribute(key, value);
+    }
+    
+    /**
+     * 向session中设置值 
+     *
+     * @author:chenssy
+     * @data : 2016年5月22日 上午10:35:09
+     *
+     * @param key
+     * @param value
+     */
+    protected void setSessionAttribute(String key,Object value){
+    	getSession().setAttribute(key, value);
+    }
+    
+    /**
+     * 客户端返回JSON字符串
+     * @param response
+     * @param object
+     * @return
+     */
+//    protected String renderString(HttpServletResponse response, Object object) {
+//       return renderString(response, JsonMapper.toJsonString(object), "application/json");
+//    }
+
+    /**
+     * 客户端返回字符串
+     * @param response
+     * @param string
+     * @return
+     */
+    protected String renderString(HttpServletResponse response, String string, String type) {
+        try {
+            response.reset();
+            response.setContentType(type);
+            response.setCharacterEncoding("utf-8");
+            response.getWriter().print(string);
+            return null;
+        } catch (IOException e) {
+            return null;
+        }
     }
 }
