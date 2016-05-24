@@ -21,7 +21,7 @@ public class MenuItem {
 
     private String menuName;
 
-    private String menuSeqno;
+    private Integer menuSeqno;
 
     private String menuParentid;
 
@@ -86,11 +86,11 @@ public class MenuItem {
 		this.menuName = menuName;
 	}
 
-	public String getMenuSeqno() {
+	public Integer getMenuSeqno() {
 		return menuSeqno;
 	}
 
-	public void setMenuSeqno(String menuSeqno) {
+	public void setMenuSeqno(Integer menuSeqno) {
 		this.menuSeqno = menuSeqno;
 	}
 

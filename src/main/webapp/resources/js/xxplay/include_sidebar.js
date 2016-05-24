@@ -66,10 +66,9 @@ function queryMenuSuccess(responseData){
 	 * level:第几级菜单
 	 */
 	function buildChildMenu(child,_a,_li,level){
-		_i++;        //图标+1
 		var _span2 = "<span class='fa arrow'></span>";
-		_a.append(_span2);     //将_span2添加到_a中
-		_li.append(_a);  //将_a1添加到_li
+		_a.append(_span2);    	 //将_span2添加到_a中
+		_li.append(_a);  		//将_a1添加到_li
 		var _ul = $("<ul class='nav " + getLevelClass(level) + " collapse '>");
 		$.each(child,function(i,_value){
 			var _li1 = $("<li></li>");
@@ -92,9 +91,6 @@ function queryMenuSuccess(responseData){
 			}
 			
 			_ul.append(_li1);
-			
-			_i++;   //图标+1
-			
 		});
 		_li.append(_ul);
 		return _li;
@@ -104,9 +100,10 @@ function queryMenuSuccess(responseData){
 	 * 获取功能性菜单图标
 	 */
 	function getFunClass(isFun){
-		
 		if(isFun == null){
 			return "fa-angle-double-right";
+		}else{
+			_i++;
 		}
 		return fas[_i];
 	}
