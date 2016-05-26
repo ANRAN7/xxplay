@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxplay.dao.base.IMenuDao" >
+  <resultMap id="BaseResultMap" type="com.xxplay.model.persistent.base.Menu" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="menu_code" property="menuCode" jdbcType="VARCHAR" />
+    <result column="menu_desc" property="menuDesc" jdbcType="VARCHAR" />
+    <result column="menu_isLeaf" property="menuIsleaf" jdbcType="CHAR" />
+    <result column="menu_name" property="menuName" jdbcType="VARCHAR" />
+    <result column="menu_seqno" property="menuSeqno" jdbcType="VARCHAR" />
+    <result column="menu_parentId" property="menuParentid" jdbcType="VARCHAR" />
+    <result column="menu_status" property="menuStatus" jdbcType="CHAR" />
+    <result column="menu_url" property="menuUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, menu_code, menu_desc, menu_isLeaf, menu_name, menu_seqno, menu_parentId, menu_status, 
+     menu_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_menu
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="queryMenuList" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from t_menu
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_menu
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xxplay.model.persistent.base.Menu" >
+    insert into t_menu (id, menu_code, menu_desc, 
+      menu_isLeaf, menu_name, menu_seqno, 
+      menu_parentId, menu_status, 
+      menu_url)
+    values (#{id,jdbcType=VARCHAR}, #{menuCode,jdbcType=VARCHAR}, #{menuDesc,jdbcType=VARCHAR}, 
+      #{menuIsleaf,jdbcType=CHAR}, #{menuName,jdbcType=VARCHAR}, #{menuSeqno,jdbcType=VARCHAR}, 
+      #{menuParentid,jdbcType=VARCHAR}, #{menuStatus,jdbcType=CHAR}, #{menuUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xxplay.model.persistent.base.Menu" >
+    insert into t_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="menuCode != null" >
+        menu_code,
+      </if>
+      <if test="menuDesc != null" >
+        menu_desc,
+      </if>
+      <if test="menuIsleaf != null" >
+        menu_isLeaf,
+      </if>
+      <if test="menuName != null" >
+        menu_name,
+      </if>
+      <if test="menuSeqno != null" >
+        menu_seqno,
+      </if>
+      <if test="menuParentid != null" >
+        menu_parentId,
+      </if>
+      <if test="menuStatus != null" >
+        menu_status,
+      </if>
+      <if test="menuUrl != null" >
+        menu_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="menuCode != null" >
+        #{menuCode,jdbcType=VARCHAR},
+      </if>
+      <if test="menuDesc != null" >
+        #{menuDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="menuIsleaf != null" >
+        #{menuIsleaf,jdbcType=CHAR},
+      </if>
+      <if test="menuName != null" >
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuSeqno != null" >
+        #{menuSeqno,jdbcType=VARCHAR},
+      </if>
+      <if test="menuParentid != null" >
+        #{menuParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuStatus != null" >
+        #{menuStatus,jdbcType=CHAR},
+      </if>
+      <if test="menuAuthor != null" >
+        #{menuAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null" >
+        #{menuUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xxplay.model.persistent.base.Menu" >
+    update t_menu
+    <set >
+      <if test="menuCode != null" >
+        menu_code = #{menuCode,jdbcType=VARCHAR},
+      </if>
+      <if test="menuDesc != null" >
+        menu_desc = #{menuDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="menuIsleaf != null" >
+        menu_isLeaf = #{menuIsleaf,jdbcType=CHAR},
+      </if>
+      <if test="menuName != null" >
+        menu_name = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuSeqno != null" >
+        menu_seqno = #{menuSeqno,jdbcType=VARCHAR},
+      </if>
+      <if test="menuParentid != null" >
+        menu_parentId = #{menuParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuStatus != null" >
+        menu_status = #{menuStatus,jdbcType=CHAR},
+      </if>
+      <if test="menuUrl != null" >
+        menu_url = #{menuUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xxplay.model.persistent.base.Menu" >
+    update t_menu
+    set menu_code = #{menuCode,jdbcType=VARCHAR},
+      menu_desc = #{menuDesc,jdbcType=VARCHAR},
+      menu_isLeaf = #{menuIsleaf,jdbcType=CHAR},
+      menu_name = #{menuName,jdbcType=VARCHAR},
+      menu_seqno = #{menuSeqno,jdbcType=VARCHAR},
+      menu_parentId = #{menuParentid,jdbcType=VARCHAR},
+      menu_status = #{menuStatus,jdbcType=CHAR},
+      menu_url = #{menuUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
