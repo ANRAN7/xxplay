@@ -17,7 +17,7 @@ public class Menu {
 
     private String menuName;
 
-    private String menuSeqno;
+    private Integer menuSeqno;
 
     private String menuParentid;
 
@@ -65,12 +65,12 @@ public class Menu {
         this.menuName = menuName == null ? null : menuName.trim();
     }
 
-    public String getMenuSeqno() {
+    public Integer getMenuSeqno() {
         return menuSeqno;
     }
 
-    public void setMenuSeqno(String menuSeqno) {
-        this.menuSeqno = menuSeqno == null ? null : menuSeqno.trim();
+    public void setMenuSeqno(Integer menuSeqno) {
+        this.menuSeqno = menuSeqno == null ? null : menuSeqno;
     }
 
     public String getMenuParentid() {

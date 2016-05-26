@@ -7,7 +7,7 @@
     <result column="menu_desc" property="menuDesc" jdbcType="VARCHAR" />
     <result column="menu_isLeaf" property="menuIsleaf" jdbcType="CHAR" />
     <result column="menu_name" property="menuName" jdbcType="VARCHAR" />
-    <result column="menu_seqno" property="menuSeqno" jdbcType="VARCHAR" />
+    <result column="menu_seqno" property="menuSeqno" jdbcType="INTEGER" />
     <result column="menu_parentId" property="menuParentid" jdbcType="VARCHAR" />
     <result column="menu_status" property="menuStatus" jdbcType="CHAR" />
     <result column="menu_url" property="menuUrl" jdbcType="VARCHAR" />
@@ -37,7 +37,7 @@
       menu_parentId, menu_status, 
       menu_url)
     values (#{id,jdbcType=VARCHAR}, #{menuCode,jdbcType=VARCHAR}, #{menuDesc,jdbcType=VARCHAR}, 
-      #{menuIsleaf,jdbcType=CHAR}, #{menuName,jdbcType=VARCHAR}, #{menuSeqno,jdbcType=VARCHAR}, 
+      #{menuIsleaf,jdbcType=CHAR}, #{menuName,jdbcType=VARCHAR}, #{menuSeqno,jdbcType=INTEGER}, 
       #{menuParentid,jdbcType=VARCHAR}, #{menuStatus,jdbcType=CHAR}, #{menuUrl,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xxplay.model.persistent.base.Menu" >
@@ -88,7 +88,7 @@
         #{menuName,jdbcType=VARCHAR},
       </if>
       <if test="menuSeqno != null" >
-        #{menuSeqno,jdbcType=VARCHAR},
+        #{menuSeqno,jdbcType=INTEGER},
       </if>
       <if test="menuParentid != null" >
         #{menuParentid,jdbcType=VARCHAR},
@@ -120,7 +120,7 @@
         menu_name = #{menuName,jdbcType=VARCHAR},
       </if>
       <if test="menuSeqno != null" >
-        menu_seqno = #{menuSeqno,jdbcType=VARCHAR},
+        menu_seqno = #{menuSeqno,jdbcType=INTEGER},
       </if>
       <if test="menuParentid != null" >
         menu_parentId = #{menuParentid,jdbcType=VARCHAR},
@@ -140,7 +140,7 @@
       menu_desc = #{menuDesc,jdbcType=VARCHAR},
       menu_isLeaf = #{menuIsleaf,jdbcType=CHAR},
       menu_name = #{menuName,jdbcType=VARCHAR},
-      menu_seqno = #{menuSeqno,jdbcType=VARCHAR},
+      menu_seqno = #{menuSeqno,jdbcType=INTEGER},
       menu_parentId = #{menuParentid,jdbcType=VARCHAR},
       menu_status = #{menuStatus,jdbcType=CHAR},
       menu_url = #{menuUrl,jdbcType=VARCHAR}
