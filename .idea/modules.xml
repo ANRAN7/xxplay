@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/xxplay.iml" filepath="$PROJECT_DIR$/xxplay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxplay-common/xxplay-common.iml" filepath="$PROJECT_DIR$/xxplay-common/xxplay-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxplay-core/xxplay-core.iml" filepath="$PROJECT_DIR$/xxplay-core/xxplay-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxplay-dao/xxplay-dao.iml" filepath="$PROJECT_DIR$/xxplay-dao/xxplay-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxplay-model/xxplay-model.iml" filepath="$PROJECT_DIR$/xxplay-model/xxplay-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxplay-service/xxplay-service.iml" filepath="$PROJECT_DIR$/xxplay-service/xxplay-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xxplay-web/xxplay-web.iml" filepath="$PROJECT_DIR$/xxplay-web/xxplay-web.iml" />
+    </modules>
+  </component>
+</project>
