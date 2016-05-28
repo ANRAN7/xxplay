@@ -1,1 +1,14 @@
-/bin
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+.idea/
+target/
+.settings/
+.project
+.classpath
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+*.log
