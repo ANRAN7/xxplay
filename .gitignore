@@ -6,6 +6,11 @@ target/
 .project
 .classpath
 
+*/.settings/
+*/.project
+*/.classpath
+
+
 # Package Files #
 *.jar
 *.war
