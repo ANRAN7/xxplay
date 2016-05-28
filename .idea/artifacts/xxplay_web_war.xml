@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="xxplay-web:war">
-    <output-path>$PROJECT_DIR$/xxplay-web/target</output-path>
-    <root id="archive" name="xxplay-web-1.0.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="xxplay-web:war exploded" />
-    </root>
-  </artifact>
-</component>
