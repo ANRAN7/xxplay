@@ -2,16 +2,10 @@
 .mtj.tmp/
 .idea/
 target/
-.settings/
-.project
-.classpath
+out/
 
-*/.settings/
-*/.project
-*/.classpath
-*/bin/
-*/idea/
-*/target/
+**/.xxplay*.iml
+**/target/
 
 
 # Package Files #

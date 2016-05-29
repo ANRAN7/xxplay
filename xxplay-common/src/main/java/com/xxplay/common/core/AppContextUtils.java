@@ -58,7 +58,7 @@ public class AppContextUtils {
 		}
 		return name;
 	}
-	
+
 	/**
 	 * 获取properties的值
 	 *
@@ -73,9 +73,9 @@ public class AppContextUtils {
 		if(StringUtils.isNotBlank(key)){
 			return AppData.getPUB_PROPERTIES().getProperty(key);
 		}
-		return ""; 
+		return "";
 	}
-	
+
 	/**
 	 * 获取指定的错误码
 	 *
@@ -91,7 +91,7 @@ public class AppContextUtils {
 		}
 		return "";
 	}
-	
+
 	/**
 	 * 获取系统的菜单
 	 *

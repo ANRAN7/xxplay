@@ -141,6 +141,7 @@ public class ApkReadUtils {
 		packInfo.put("iconTempUrl",AppContextUtils.getPropertiesValue(AppConstants.GAME_APP_PACK_ICON_TEMP_PATH) + "/" + iconFileName );
 		
 		//apk下载地址
+
 		packInfo.put("packUrl", AppContextUtils.getPropertiesValue(AppConstants.GAME_APP_PACK_REAL_PATH) + "/" + fileName);
 		//icon保存路径
 		packInfo.put("iconPicurl", AppContextUtils.getPropertiesValue(AppConstants.GAME_APP_PACK_ICON_REAL_PATH) + "/" + iconFileName);
