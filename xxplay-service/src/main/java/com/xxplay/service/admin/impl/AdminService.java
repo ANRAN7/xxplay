@@ -55,7 +55,7 @@ public class AdminService implements IAdminService{
 		//密码解码
 		password = Des.strDec(password,AppContextUtils.getPropertiesValue("login-key"),null,null);
 		passwordService.checkAdminPassword(password,admin.getPassword());
-		
+
 		return admin;
 	}
 

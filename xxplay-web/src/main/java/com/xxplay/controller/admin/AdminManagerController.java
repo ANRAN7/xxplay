@@ -78,7 +78,7 @@ public class AdminManagerController {
 		
 		return "admin/addManager";
 	}
-	
+
 	@RequestMapping("/addManager")
 	public @ResponseBody Map<String, Object> addManager(@RequestBody Map<String, String> params){
 		boolean resultFlag = true;

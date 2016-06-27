@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,7 +73,6 @@ public class RoleManagerController extends BaseController{
 	@ResponseBody
 	public Map<String, Object> updateRoleStatus(@RequestBody Role role){
 		boolean result = true;
-		
 		try{
 			roleService.updateRole(role);
 		}catch(Exception e){

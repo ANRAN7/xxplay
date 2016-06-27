@@ -126,7 +126,7 @@ public class GameSaveInfoController extends FileBaseController{
 	 * 上传游戏图片列表
 	 *
 	 * @param request
-	 * @throws ServiceException
+	 * @throws com.xxplay.common.exception.ServiceException
 	 *
 	 * @author:chenssy
 	 * @date : 2016年4月27日 上午12:02:02

@@ -76,7 +76,7 @@ public class LoginController {
 	 * @return
 	 *
 	 * @author:chenssy
-	 * @throws ServiceException 
+	 * @throws com.xxplay.common.exception.ServiceException
 	 * @date : 2016年4月9日
 	 */
 	@RequestMapping("/login")
@@ -98,7 +98,7 @@ public class LoginController {
 	 * @return
 	 *
 	 * @author:chenssy
-	 * @throws ServiceException 
+	 * @throws com.xxplay.common.exception.ServiceException
 	 * @date : 2016年4月11日
 	 */
 	@RequestMapping("/toMain")
@@ -117,7 +117,7 @@ public class LoginController {
 	 *
 	 * @param request
 	 * @return
-	 * @throws ServiceException
+	 * @throws com.xxplay.common.exception.ServiceException
 	 *
 	 * @author:chenssy
 	 * @date : 2016年4月12日

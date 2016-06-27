@@ -72,7 +72,6 @@ public class ApkReadUtils {
 			while (enumeration.hasMoreElements()) {
 				zipEntry = (ZipEntry) enumeration.nextElement();
 				if (zipEntry.isDirectory()) {
-
 				} else {
 					if ("AndroidManifest.xml".equals(zipEntry.getName())) {
 						try {

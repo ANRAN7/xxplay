@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%@include file="../../page/include/include_base_css.jsp" %>
+    <%@include file="../include_base_css.jsp" %>
 </head>
 
 <body class="">
     <div>
     	<!-- begin 顶部 -->
-        <%@include file="../../page/include/include_header.jsp" %>
+        <%@include file="../include_header.jsp" %>
         <!-- end 顶部 -->
         <!-- begin 主题内容-->
         <div id="wrapper">
             <!--begin 导航栏-->
-            <%@include file="../../page/include/include_sidebar.jsp" %>
+            <%@include file="../include_sidebar.jsp" %>
             <!--end 导航栏-->
             <!--begin 内容-->
             <div id="page-wrapper">
@@ -40,13 +40,13 @@
     		<!--end 内容-->
     		</div>
     		<!--begin 页面底部-->
-    		<%@include file="../../page/include/include_footer.jsp" %>
+    		<%@include file="../include_footer.jsp" %>
     		<!--end 页面底部-->
     		<!--end 页面主体内容-->
-    		<%@include file="../../page/include/include_modals_showDetail.jsp" %>
+    		<%@include file="../include_modals_showDetail.jsp" %>
     	</div>
     </div>
-    <%@include file="../../page/include/include_base_js.jsp" %>
+    <%@include file="../include_base_js.jsp" %>
 </body>
 <script type="text/javascript">
 	/**
